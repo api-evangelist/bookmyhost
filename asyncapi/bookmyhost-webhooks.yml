@@ -1,0 +1,27 @@
+generated: '2026-10-16'
+method: derived
+generator: derive-webhooks.py
+source:
+- openapi/_original/openapi.json
+description: 'Event surface derived from the provider''s own OpenAPI: enum EmailEvent. No AsyncAPI document is published by the provider; this
+  catalog lists the events the contract names.'
+management_operations:
+- active_callbacks_active_callbacks_get
+- active_callbacks_settings_get
+- list_callbacks_callbacks_list_get
+- get_callback_configs_callbacks_configs_get
+- ingest_callback_logs_v1_rust_control_plane_logs_post
+- add_team_callbacks_team__team_id__callback_post
+- get_team_callbacks_team__team_id__callback_get
+- callback_callback_get
+events:
+- event: Virtual Key Created
+  declared_in: components/schemas/EmailEvent
+- event: New User Invitation
+  declared_in: components/schemas/EmailEvent
+- event: Virtual Key Rotated
+  declared_in: components/schemas/EmailEvent
+- event: Soft Budget Crossed
+  declared_in: components/schemas/EmailEvent
+- event: Max Budget Alert
+  declared_in: components/schemas/EmailEvent

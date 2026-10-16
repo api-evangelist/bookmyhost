@@ -1,23 +1,115 @@
 aid: bookmyhost
+
 name: Blazing Bullet Private Limited
-description: 'Blazing Bullet Private Limited is a company surfaced via the API Evangelist harvest backlog
-  (source: g2-catalog) and added to the network as a stub for full-pipeline profiling.'
+
+image: https://bookmyhost.com/brand-assets/1/og.png
+
+description: Blazing Bullet Private Limited operates BookMyHost, an Indian cloud services provider offering VPS, dedicated servers, and AI APIs.
+  Founded in 2005, it runs its own Noida datacentre and network (AS152523), provides hourly billing, GST invoicing, and DDoS‑protected infrastructure
+  across 50+ Indian cities.
+
 url: https://raw.githubusercontent.com/api-evangelist/bookmyhost/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-16 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-16'
+
 modified: '2026-10-16'
+
 tags:
 - Company
-apis: []
+- Cloud
+- Hosting
+- VPS
+- India
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Documentation
+  url: https://bookmyhost.com/guides
+- type: Plans
+  url: plans/bookmyhost-plans-pricing.yml
+- type: Spectral
+  url: rules/bookmyhost-rules.yml
+- type: JSONLD
+  url: json-ld/bookmyhost-context.jsonld
+- type: Vocabulary
+  url: vocabulary/bookmyhost-vocabulary.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Webhooks
+  url: asyncapi/bookmyhost-webhooks.yml
+- type: DataModel
+  url: data-model/bookmyhost-data-model.yml
+- type: ErrorCatalog
+  url: errors/bookmyhost-problem-types.yml
+- type: Conformance
+  url: conformance/bookmyhost-conformance.yml
+- type: Overlay
+  url: overlays/bookmyhost-openapi-overlay.yaml
+- type: LLMsTxt
+  url: llms/bookmyhost-llms.txt
+- type: WellKnown
+  url: well-known/bookmyhost-well-known.yml
+- type: Hosts
+  url: hosts/bookmyhost-hosts.yml
+- type: Vendors
+  url: vendors/bookmyhost-vendors.yml
+- type: GitHubOrganization
+  url: https://github.com/bookmyhost
+- type: DomainSecurity
+  url: security/bookmyhost-domain-security.yml
 - type: Website
   url: https://bookmyhost.com/
+- type: APIReference
+  url: https://my.bookmyhost.com/developer
+- type: GettingStarted
+  url: https://bookmyhost.com/pricing
+- type: Support
+  url: https://bookmyhost.com/contact
+- type: Blog
+  url: https://bookmyhost.com/blog
+- type: TermsOfService
+  url: https://bookmyhost.com/terms
+- type: PrivacyPolicy
+  url: https://bookmyhost.com/privacy
+- type: Pricing
+  url: https://bookmyhost.com/pricing
+- type: SignUp
+  url: https://my.bookmyhost.com/register
+- type: Login
+  url: https://my.bookmyhost.com/login
+
+apis:
+- name: BookMyHost API
+  description: API for BookMyHost cloud services, as described in the developer portal.
+  humanURL: https://my.bookmyhost.com/developer
+  aid: bookmyhost:bookmyhost-api
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: The discovered OpenAPI spec at https://api.bookmyhost.com/openapi.json describes a LiteLLM API, not BookMyHost services, so no owned
+    contract is available.
+  evidence:
+  - url: https://api.bookmyhost.com/openapi.json
+    status: 200
+  checked: '2026-10-16'
+x-enrichment:
+  date: '2026-10-16'
+  status: enriched
+  artifacts_added: 23
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

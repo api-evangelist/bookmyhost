@@ -1,0 +1,57 @@
+generated: '2026-10-16'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://bookmyhost.com/pricing
+sources:
+- https://bookmyhost.com/pricing
+- https://bookmyhost.com/guides/tally-on-cloud-price-india
+- https://bookmyhost.com/app-hosting
+- https://bookmyhost.com/gst-billing
+name: Blazing Bullet Private Limited pricing
+audience: business-product
+pricing_basis: per-seat
+plans:
+- name: CV1
+  price_text: $3.82 / month
+  price: 3.82
+  description: 1 vCPU / 1 GB / 20 GB
+- name: CV2
+  price_text: $6.44 / month
+  price: 6.44
+  description: 2 vCPU / 2 GB / 40 GB
+- name: CV4
+  price_text: $14.88 / month
+  price: 14.88
+  description: 4 vCPU / 8 GB / 80 GB
+- name: Custom vCPU
+  price_text: $1.19 / vCPU · month
+  price: 1.19
+  description: Custom size, RAM, NVMe priced per GB
+- name: Tally Shared
+  price_text: ₹199 per user per month
+  price: 199
+  description: Shared Tally server, browser access
+- name: Tally Dedicated
+  price_text: ₹300 per user per month
+  price: 300
+  description: Dedicated server, minimum 5 users
+- name: Tally Windows RDP
+  price_text: ₹599 per user per month
+  price: 599
+  description: Dedicated Windows Server with RDP, 2 users included
+- name: Hobby
+  price_text: Free
+  description: Free plan, 1 app, shared sandbox
+- name: Starter
+  price_text: $1.74 / month
+  price: 1.74
+  description: Private app server, 1 vCPU, 1 GB RAM, 20 GB disk
+- name: Pro
+  price_text: $5.24 / month
+  price: 5.24
+  description: Private app server, 2 vCPU, 4 GB RAM, 50 GB disk
+- name: Business
+  price_text: $13.13 / month
+  price: 13.13
+  description: Private app server, 4 vCPU, 8 GB RAM, 100 GB disk
+docs: https://bookmyhost.com/pricing

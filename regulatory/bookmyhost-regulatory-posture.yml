@@ -1,0 +1,44 @@
+generated: '2026-10-16'
+method: probed
+source: https://bookmyhost.com/privacy
+signals:
+  data_subject_request:
+    evidence:
+      - source: https://bookmyhost.com/privacy
+        http_status: 200
+        fetched: "true"
+        quote: "Under the DPDP Act you may access a summary of your personal data, correct or update it (most of it directly in the panel), withdraw consent, nominate a person to exercise your rights, and request erasure — which we honour except for records we must keep under clause 4."
+        section: "5. Your rights"
+        note: "Describes data subject rights to access, correction, deletion, etc."
+  subprocessors:
+    evidence:
+      - source: https://bookmyhost.com/privacy
+        http_status: 200
+        fetched: "true"
+        quote: "It is shared only with processors needed to run the service: Cashfree Payments (payment processing; GSTIN and Aadhaar/DigiLocker verification), Didit (identity-document verification for international customers), Cloudflare (bot protection on the login page, where enabled), and with government agencies where Indian law compels disclosure."
+        section: "3. Who we share it with"
+        note: "Lists third‑party processors used."
+  incident_notification:
+    evidence:
+      - source: https://bookmyhost.com/privacy
+        http_status: 200
+        fetched: "true"
+        quote: "Reportable cyber incidents are notified to CERT-In within 6 hours and affected users are informed without undue delay."
+        section: "6. Security and breach notification"
+        note: "Specifies breach notification timeline."
+  data_residency:
+    evidence:
+      - source: https://bookmyhost.com/privacy
+        http_status: 200
+        fetched: "true"
+        quote: "Your account data, KYC records, logs and hosted content are stored on our own infrastructure located in India."
+        section: "3. Who we share it with"
+        note: "Confirms data stays in India."
+  data_retention:
+    evidence:
+      - source: https://bookmyhost.com/privacy
+        http_status: 200
+        fetched: "true"
+        quote: "System, access and API logs — 180 days (CERT-In direction). Subscriber identity, KYC and service‑allocation records — 5 years after account closure (CERT-In direction). Invoices and financial ledgers — 8 years (GST and Companies Act requirements)."
+        section: "4. How long we keep it"
+        note: "Specifies retention periods for different data categories."

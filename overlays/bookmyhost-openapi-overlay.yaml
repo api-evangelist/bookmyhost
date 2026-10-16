@@ -1,0 +1,10 @@
+{
+  "generated": "2026-10-16",
+  "method": "derived",
+  "source": "openapi/_original/openapi.json",
+  "overlay": {
+    "openapi": "3.1.0",
+    "info": {"title": "bookmyhost API Overlay"},
+    "actions": []
+  }
+}

@@ -1,0 +1,74 @@
+generated: '2026-10-16'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 4
+  own: 3
+  other_domain: 0
+  platform: 1
+  roles:
+  - api
+  - docs
+  - source
+  - website
+hosts:
+- host: api.bookmyhost.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: bookmyhost.com
+  role: api
+  relation: own
+- host: bookmyhost.com
+  found_by:
+  - pointer
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Documentation
+  - Website
+  - GettingStarted
+  - Support
+  - Blog
+  - TermsOfService
+  - PrivacyPolicy
+  - Pricing
+  serves:
+  - docs
+  - cdn
+  vendor: cloudflare
+  registrable_domain: bookmyhost.com
+  role: website
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: my.bookmyhost.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - APIReference
+  - SignUp
+  - Login
+  serves:
+  - docs
+  registrable_domain: bookmyhost.com
+  role: docs
+  relation: own

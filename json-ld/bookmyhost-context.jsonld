@@ -1,0 +1,1080 @@
+{
+  "@context": {
+    "@vocab": "https://bookmyhost.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bookmyhost": "https://bookmyhost.com/schema#",
+    "APIKeySecurityScheme": "bookmyhost:APIKeySecurityScheme",
+    "description": {
+      "@id": "bookmyhost:description"
+    },
+    "type": {
+      "@id": "bookmyhost:type",
+      "@type": "xsd:string"
+    },
+    "in_": {
+      "@id": "bookmyhost:in_",
+      "@type": "xsd:string"
+    },
+    "name": {
+      "@id": "bookmyhost:name",
+      "@type": "xsd:string"
+    },
+    "AccessControl_UI_AccessMode": "bookmyhost:AccessControl_UI_AccessMode",
+    "restricted_sso_group": {
+      "@id": "bookmyhost:restricted_sso_group",
+      "@type": "xsd:string"
+    },
+    "sso_group_jwt_field": {
+      "@id": "bookmyhost:sso_group_jwt_field",
+      "@type": "xsd:string"
+    },
+    "AccessGroupInfo": "bookmyhost:AccessGroupInfo",
+    "access_group": {
+      "@id": "bookmyhost:access_group",
+      "@type": "xsd:string"
+    },
+    "model_names": {
+      "@id": "bookmyhost:model_names",
+      "@container": "@list"
+    },
+    "deployment_count": {
+      "@id": "bookmyhost:deployment_count",
+      "@type": "xsd:integer"
+    },
+    "ActiveUsersAnalyticsResponse": "bookmyhost:ActiveUsersAnalyticsResponse",
+    "results": {
+      "@id": "bookmyhost:results",
+      "@container": "@list"
+    },
+    "AddTeamCallback": "bookmyhost:AddTeamCallback",
+    "callback_name": {
+      "@id": "bookmyhost:callback_name",
+      "@type": "xsd:string"
+    },
+    "callback_type": {
+      "@id": "bookmyhost:callback_type"
+    },
+    "callback_vars": {
+      "@id": "bookmyhost:callback_vars"
+    },
+    "AgentCapabilities": "bookmyhost:AgentCapabilities",
+    "streaming": {
+      "@id": "bookmyhost:streaming"
+    },
+    "pushNotifications": {
+      "@id": "bookmyhost:pushNotifications"
+    },
+    "stateTransitionHistory": {
+      "@id": "bookmyhost:stateTransitionHistory"
+    },
+    "extensions": {
+      "@id": "bookmyhost:extensions"
+    },
+    "AgentCard": "bookmyhost:AgentCard",
+    "protocolVersion": {
+      "@id": "bookmyhost:protocolVersion",
+      "@type": "xsd:string"
+    },
+    "url": {
+      "@id": "bookmyhost:url",
+      "@type": "xsd:string"
+    },
+    "version": {
+      "@id": "bookmyhost:version",
+      "@type": "xsd:string"
+    },
+    "capabilities": {
+      "@id": "bookmyhost:capabilities",
+      "@type": "@id"
+    },
+    "defaultInputModes": {
+      "@id": "bookmyhost:defaultInputModes",
+      "@container": "@list"
+    },
+    "defaultOutputModes": {
+      "@id": "bookmyhost:defaultOutputModes",
+      "@container": "@list"
+    },
+    "skills": {
+      "@id": "bookmyhost:skills",
+      "@container": "@list"
+    },
+    "preferredTransport": {
+      "@id": "bookmyhost:preferredTransport"
+    },
+    "additionalInterfaces": {
+      "@id": "bookmyhost:additionalInterfaces"
+    },
+    "iconUrl": {
+      "@id": "bookmyhost:iconUrl"
+    },
+    "provider": {
+      "@id": "bookmyhost:provider"
+    },
+    "documentationUrl": {
+      "@id": "bookmyhost:documentationUrl"
+    },
+    "securitySchemes": {
+      "@id": "bookmyhost:securitySchemes"
+    },
+    "security": {
+      "@id": "bookmyhost:security"
+    },
+    "supportsAuthenticatedExtendedCard": {
+      "@id": "bookmyhost:supportsAuthenticatedExtendedCard"
+    },
+    "signatures": {
+      "@id": "bookmyhost:signatures"
+    },
+    "AgentCardSignature": "bookmyhost:AgentCardSignature",
+    "protected": {
+      "@id": "bookmyhost:protected",
+      "@type": "xsd:string"
+    },
+    "signature": {
+      "@id": "bookmyhost:signature",
+      "@type": "xsd:string"
+    },
+    "header": {
+      "@id": "bookmyhost:header"
+    },
+    "AgentConfig": "bookmyhost:AgentConfig",
+    "agent_name": {
+      "@id": "bookmyhost:agent_name",
+      "@type": "xsd:string"
+    },
+    "agent_card_params": {
+      "@id": "bookmyhost:agent_card_params",
+      "@type": "@id"
+    },
+    "litellm_params": {
+      "@id": "bookmyhost:litellm_params"
+    },
+    "object_permission": {
+      "@id": "bookmyhost:object_permission",
+      "@type": "@id"
+    },
+    "tpm_limit": {
+      "@id": "bookmyhost:tpm_limit"
+    },
+    "rpm_limit": {
+      "@id": "bookmyhost:rpm_limit"
+    },
+    "session_tpm_limit": {
+      "@id": "bookmyhost:session_tpm_limit"
+    },
+    "session_rpm_limit": {
+      "@id": "bookmyhost:session_rpm_limit"
+    },
+    "static_headers": {
+      "@id": "bookmyhost:static_headers"
+    },
+    "extra_headers": {
+      "@id": "bookmyhost:extra_headers"
+    },
+    "AgentCreateInfo": "bookmyhost:AgentCreateInfo",
+    "agent_type": {
+      "@id": "bookmyhost:agent_type",
+      "@type": "xsd:string"
+    },
+    "agent_type_display_name": {
+      "@id": "bookmyhost:agent_type_display_name",
+      "@type": "xsd:string"
+    },
+    "logo_url": {
+      "@id": "bookmyhost:logo_url"
+    },
+    "credential_fields": {
+      "@id": "bookmyhost:credential_fields",
+      "@container": "@list"
+    },
+    "litellm_params_template": {
+      "@id": "bookmyhost:litellm_params_template"
+    },
+    "model_template": {
+      "@id": "bookmyhost:model_template"
+    },
+    "AgentCredentialField": "bookmyhost:AgentCredentialField",
+    "key": {
+      "@id": "bookmyhost:key",
+      "@type": "xsd:string"
+    },
+    "label": {
+      "@id": "bookmyhost:label",
+      "@type": "xsd:string"
+    },
+    "placeholder": {
+      "@id": "bookmyhost:placeholder"
+    },
+    "tooltip": {
+      "@id": "bookmyhost:tooltip"
+    },
+    "required": {
+      "@id": "bookmyhost:required",
+      "@type": "xsd:boolean"
+    },
+    "field_type": {
+      "@id": "bookmyhost:field_type",
+      "@type": "xsd:string"
+    },
+    "options": {
+      "@id": "bookmyhost:options"
+    },
+    "default_value": {
+      "@id": "bookmyhost:default_value"
+    },
+    "include_in_litellm_params": {
+      "@id": "bookmyhost:include_in_litellm_params"
+    },
+    "AgentExtension": "bookmyhost:AgentExtension",
+    "uri": {
+      "@id": "bookmyhost:uri",
+      "@type": "xsd:string"
+    },
+    "params": {
+      "@id": "bookmyhost:params"
+    },
+    "AgentInterface": "bookmyhost:AgentInterface",
+    "transport": {
+      "@id": "bookmyhost:transport",
+      "@type": "xsd:string"
+    },
+    "AgentKeySummary": "bookmyhost:AgentKeySummary",
+    "token": {
+      "@id": "bookmyhost:token",
+      "@type": "xsd:string"
+    },
+    "key_alias": {
+      "@id": "bookmyhost:key_alias"
+    },
+    "key_name": {
+      "@id": "bookmyhost:key_name"
+    },
+    "AgentMakePublicResponse": "bookmyhost:AgentMakePublicResponse",
+    "message": {
+      "@id": "bookmyhost:message",
+      "@type": "xsd:string"
+    },
+    "public_agent_groups": {
+      "@id": "bookmyhost:public_agent_groups",
+      "@container": "@list"
+    },
+    "updated_by": {
+      "@id": "bookmyhost:updated_by",
+      "@type": "xsd:string"
+    },
+    "AgentObjectPermission": "bookmyhost:AgentObjectPermission",
+    "mcp_servers": {
+      "@id": "bookmyhost:mcp_servers"
+    },
+    "mcp_access_groups": {
+      "@id": "bookmyhost:mcp_access_groups"
+    },
+    "mcp_tool_permissions": {
+      "@id": "bookmyhost:mcp_tool_permissions"
+    },
+    "models": {
+      "@id": "bookmyhost:models"
+    },
+    "agents": {
+      "@id": "bookmyhost:agents"
+    },
+    "AgentProvider": "bookmyhost:AgentProvider",
+    "organization": {
+      "@id": "bookmyhost:organization",
+      "@type": "xsd:string"
+    },
+    "AgentResponse": "bookmyhost:AgentResponse",
+    "agent_id": {
+      "@id": "bookmyhost:agent_id",
+      "@type": "xsd:string"
+    },
+    "spend": {
+      "@id": "bookmyhost:spend"
+    },
+    "keys": {
+      "@id": "bookmyhost:keys"
+    },
+    "created_at": {
+      "@id": "bookmyhost:created_at"
+    },
+    "updated_at": {
+      "@id": "bookmyhost:updated_at"
+    },
+    "created_by": {
+      "@id": "bookmyhost:created_by"
+    },
+    "AgentSkill": "bookmyhost:AgentSkill",
+    "id": {
+      "@id": "bookmyhost:id",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "bookmyhost:tags",
+      "@container": "@list"
+    },
+    "examples": {
+      "@id": "bookmyhost:examples"
+    },
+    "inputModes": {
+      "@id": "bookmyhost:inputModes"
+    },
+    "outputModes": {
+      "@id": "bookmyhost:outputModes"
+    },
+    "AllowedVectorStoreIndexItem": "bookmyhost:AllowedVectorStoreIndexItem",
+    "index_name": {
+      "@id": "bookmyhost:index_name",
+      "@type": "xsd:string"
+    },
+    "index_permissions": {
+      "@id": "bookmyhost:index_permissions",
+      "@container": "@list"
+    },
+    "AuditLogResponse": "bookmyhost:AuditLogResponse",
+    "changed_by": {
+      "@id": "bookmyhost:changed_by",
+      "@type": "xsd:string"
+    },
+    "changed_by_api_key": {
+      "@id": "bookmyhost:changed_by_api_key",
+      "@type": "xsd:string"
+    },
+    "action": {
+      "@id": "bookmyhost:action",
+      "@type": "xsd:string"
+    },
+    "table_name": {
+      "@id": "bookmyhost:table_name",
+      "@type": "xsd:string"
+    },
+    "object_id": {
+      "@id": "bookmyhost:object_id",
+      "@type": "xsd:string"
+    },
+    "before_value": {
+      "@id": "bookmyhost:before_value"
+    },
+    "updated_values": {
+      "@id": "bookmyhost:updated_values"
+    },
+    "BlockKeyRequest": "bookmyhost:BlockKeyRequest",
+    "BlockModelRequest": "bookmyhost:BlockModelRequest",
+    "model_id": {
+      "@id": "bookmyhost:model_id",
+      "@type": "xsd:string"
+    },
+    "BlockTeamRequest": "bookmyhost:BlockTeamRequest",
+    "team_id": {
+      "@id": "bookmyhost:team_id",
+      "@type": "xsd:string"
+    },
+    "BlockUsers": "bookmyhost:BlockUsers",
+    "user_ids": {
+      "@id": "bookmyhost:user_ids",
+      "@container": "@list"
+    },
+    "BlockUsersResponse": "bookmyhost:BlockUsersResponse",
+    "blocked_users": {
+      "@id": "bookmyhost:blocked_users",
+      "@container": "@list"
+    },
+    "BlogPost": "bookmyhost:BlogPost",
+    "title": {
+      "@id": "bookmyhost:title",
+      "@type": "xsd:string"
+    },
+    "date": {
+      "@id": "bookmyhost:date",
+      "@type": "xsd:string"
+    },
+    "BlogPostsResponse": "bookmyhost:BlogPostsResponse",
+    "posts": {
+      "@id": "bookmyhost:posts",
+      "@container": "@list"
+    },
+    "Body_audio_transcriptions_audio_transcriptions_post": "bookmyhost:Body_audio_transcriptions_audio_transcriptions_post",
+    "file": {
+      "@id": "bookmyhost:file",
+      "@type": "xsd:string"
+    },
+    "Body_audio_transcriptions_v1_audio_transcriptions_post": "bookmyhost:Body_audio_transcriptions_v1_audio_transcriptions_post",
+    "Body_create_file__provider__v1_files_post": "bookmyhost:Body_create_file__provider__v1_files_post",
+    "purpose": {
+      "@id": "bookmyhost:purpose",
+      "@type": "xsd:string"
+    },
+    "target_model_names": {
+      "@id": "bookmyhost:target_model_names",
+      "@type": "xsd:string"
+    },
+    "target_storage": {
+      "@id": "bookmyhost:target_storage",
+      "@type": "xsd:string"
+    },
+    "custom_llm_provider": {
+      "@id": "bookmyhost:custom_llm_provider",
+      "@type": "xsd:string"
+    },
+    "litellm_metadata": {
+      "@id": "bookmyhost:litellm_metadata"
+    },
+    "Body_create_file_files_post": "bookmyhost:Body_create_file_files_post",
+    "Body_create_file_v1_files_post": "bookmyhost:Body_create_file_v1_files_post",
+    "Body_image_edit_api_images_edits_post": "bookmyhost:Body_image_edit_api_images_edits_post",
+    "image": {
+      "@id": "bookmyhost:image"
+    },
+    "mask": {
+      "@id": "bookmyhost:mask"
+    },
+    "Body_image_edit_api_openai_deployments__model__images_edits_post": "bookmyhost:Body_image_edit_api_openai_deployments__model__images_edits_post",
+    "Body_image_edit_api_v1_images_edits_post": "bookmyhost:Body_image_edit_api_v1_images_edits_post",
+    "Body_test_model_connection_health_test_connection_post": "bookmyhost:Body_test_model_connection_health_test_connection_post",
+    "mode": {
+      "@id": "bookmyhost:mode"
+    },
+    "model_info": {
+      "@id": "bookmyhost:model_info"
+    },
+    "Body_token_endpoint__mcp_server_name__token_post": "bookmyhost:Body_token_endpoint__mcp_server_name__token_post",
+    "grant_type": {
+      "@id": "bookmyhost:grant_type",
+      "@type": "xsd:string"
+    },
+    "code": {
+      "@id": "bookmyhost:code",
+      "@type": "xsd:string"
+    },
+    "redirect_uri": {
+      "@id": "bookmyhost:redirect_uri",
+      "@type": "xsd:string"
+    },
+    "client_id": {
+      "@id": "bookmyhost:client_id",
+      "@type": "xsd:string"
+    },
+    "client_secret": {
+      "@id": "bookmyhost:client_secret"
+    },
+    "code_verifier": {
+      "@id": "bookmyhost:code_verifier",
+      "@type": "xsd:string"
+    },
+    "refresh_token": {
+      "@id": "bookmyhost:refresh_token"
+    },
+    "scope": {
+      "@id": "bookmyhost:scope"
+    },
+    "Body_token_endpoint_token_post": "bookmyhost:Body_token_endpoint_token_post",
+    "Body_upload_logo_upload_logo_post": "bookmyhost:Body_upload_logo_upload_logo_post",
+    "Body_video_create_character_v1_videos_characters_post": "bookmyhost:Body_video_create_character_v1_videos_characters_post",
+    "video": {
+      "@id": "bookmyhost:video",
+      "@type": "xsd:string"
+    },
+    "Body_video_create_character_videos_characters_post": "bookmyhost:Body_video_create_character_videos_characters_post",
+    "Body_video_generation_v1_videos_post": "bookmyhost:Body_video_generation_v1_videos_post",
+    "input_reference": {
+      "@id": "bookmyhost:input_reference"
+    },
+    "Body_video_generation_videos_post": "bookmyhost:Body_video_generation_videos_post",
+    "BreakdownMetrics": "bookmyhost:BreakdownMetrics",
+    "model_groups": {
+      "@id": "bookmyhost:model_groups"
+    },
+    "providers": {
+      "@id": "bookmyhost:providers"
+    },
+    "endpoints": {
+      "@id": "bookmyhost:endpoints"
+    },
+    "api_keys": {
+      "@id": "bookmyhost:api_keys"
+    },
+    "entities": {
+      "@id": "bookmyhost:entities"
+    },
+    "BudgetConfig": "bookmyhost:BudgetConfig",
+    "max_budget": {
+      "@id": "bookmyhost:max_budget"
+    },
+    "budget_duration": {
+      "@id": "bookmyhost:budget_duration"
+    },
+    "BudgetDeleteRequest": "bookmyhost:BudgetDeleteRequest",
+    "BudgetLimitEntry": "bookmyhost:BudgetLimitEntry",
+    "reset_at": {
+      "@id": "bookmyhost:reset_at"
+    },
+    "BudgetNewRequest": "bookmyhost:BudgetNewRequest",
+    "budget_id": {
+      "@id": "bookmyhost:budget_id"
+    },
+    "soft_budget": {
+      "@id": "bookmyhost:soft_budget"
+    },
+    "max_parallel_requests": {
+      "@id": "bookmyhost:max_parallel_requests"
+    },
+    "model_max_budget": {
+      "@id": "bookmyhost:model_max_budget"
+    },
+    "budget_reset_at": {
+      "@id": "bookmyhost:budget_reset_at"
+    },
+    "BudgetRequest": "bookmyhost:BudgetRequest",
+    "budgets": {
+      "@id": "bookmyhost:budgets",
+      "@container": "@list"
+    },
+    "BulkTeamMemberAddRequest": "bookmyhost:BulkTeamMemberAddRequest",
+    "members": {
+      "@id": "bookmyhost:members"
+    },
+    "all_users": {
+      "@id": "bookmyhost:all_users"
+    },
+    "max_budget_in_team": {
+      "@id": "bookmyhost:max_budget_in_team"
+    },
+    "BulkTeamMemberAddResponse": "bookmyhost:BulkTeamMemberAddResponse",
+    "total_requested": {
+      "@id": "bookmyhost:total_requested",
+      "@type": "xsd:integer"
+    },
+    "successful_additions": {
+      "@id": "bookmyhost:successful_additions",
+      "@type": "xsd:integer"
+    },
+    "failed_additions": {
+      "@id": "bookmyhost:failed_additions",
+      "@type": "xsd:integer"
+    },
+    "updated_team": {
+      "@id": "bookmyhost:updated_team"
+    },
+    "BulkUpdateKeyRequest": "bookmyhost:BulkUpdateKeyRequest",
+    "BulkUpdateKeyRequestItem": "bookmyhost:BulkUpdateKeyRequestItem",
+    "BulkUpdateKeyResponse": "bookmyhost:BulkUpdateKeyResponse",
+    "successful_updates": {
+      "@id": "bookmyhost:successful_updates",
+      "@container": "@list"
+    },
+    "failed_updates": {
+      "@id": "bookmyhost:failed_updates",
+      "@container": "@list"
+    },
+    "BulkUpdateTeamKeysRequest": "bookmyhost:BulkUpdateTeamKeysRequest",
+    "key_ids": {
+      "@id": "bookmyhost:key_ids"
+    },
+    "all_keys_in_team": {
+      "@id": "bookmyhost:all_keys_in_team",
+      "@type": "xsd:boolean"
+    },
+    "update_fields": {
+      "@id": "bookmyhost:update_fields",
+      "@type": "@id"
+    },
+    "BulkUpdateTeamMemberPermissionsRequest": "bookmyhost:BulkUpdateTeamMemberPermissionsRequest",
+    "permissions": {
+      "@id": "bookmyhost:permissions",
+      "@container": "@list"
+    },
+    "team_ids": {
+      "@id": "bookmyhost:team_ids"
+    },
+    "apply_to_all_teams": {
+      "@id": "bookmyhost:apply_to_all_teams",
+      "@type": "xsd:boolean"
+    },
+    "BulkUpdateTeamMemberPermissionsResponse": "bookmyhost:BulkUpdateTeamMemberPermissionsResponse",
+    "teams_updated": {
+      "@id": "bookmyhost:teams_updated",
+      "@type": "xsd:integer"
+    },
+    "permissions_appended": {
+      "@id": "bookmyhost:permissions_appended"
+    },
+    "BulkUpdateUserRequest": "bookmyhost:BulkUpdateUserRequest",
+    "users": {
+      "@id": "bookmyhost:users"
+    },
+    "user_updates": {
+      "@id": "bookmyhost:user_updates"
+    },
+    "BulkUpdateUserResponse": "bookmyhost:BulkUpdateUserResponse",
+    "CachePingResponse": "bookmyhost:CachePingResponse",
+    "status": {
+      "@id": "bookmyhost:status",
+      "@type": "xsd:string"
+    },
+    "cache_type": {
+      "@id": "bookmyhost:cache_type",
+      "@type": "xsd:string"
+    },
+    "ping_response": {
+      "@id": "bookmyhost:ping_response"
+    },
+    "set_cache_response": {
+      "@id": "bookmyhost:set_cache_response"
+    },
+    "litellm_cache_params": {
+      "@id": "bookmyhost:litellm_cache_params"
+    },
+    "health_check_cache_params": {
+      "@id": "bookmyhost:health_check_cache_params"
+    },
+    "CacheSettingsField": "bookmyhost:CacheSettingsField",
+    "field_name": {
+      "@id": "bookmyhost:field_name",
+      "@type": "xsd:string"
+    },
+    "field_value": {
+      "@id": "bookmyhost:field_value"
+    },
+    "field_description": {
+      "@id": "bookmyhost:field_description",
+      "@type": "xsd:string"
+    },
+    "field_default": {
+      "@id": "bookmyhost:field_default"
+    },
+    "ui_field_name": {
+      "@id": "bookmyhost:ui_field_name",
+      "@type": "xsd:string"
+    },
+    "link": {
+      "@id": "bookmyhost:link"
+    },
+    "redis_type": {
+      "@id": "bookmyhost:redis_type"
+    },
+    "CacheSettingsResponse": "bookmyhost:CacheSettingsResponse",
+    "fields": {
+      "@id": "bookmyhost:fields",
+      "@container": "@list"
+    },
+    "current_values": {
+      "@id": "bookmyhost:current_values"
+    },
+    "redis_type_descriptions": {
+      "@id": "bookmyhost:redis_type_descriptions"
+    },
+    "CacheSettingsUpdateRequest": "bookmyhost:CacheSettingsUpdateRequest",
+    "cache_settings": {
+      "@id": "bookmyhost:cache_settings"
+    },
+    "CacheTestRequest": "bookmyhost:CacheTestRequest",
+    "CacheTestResponse": "bookmyhost:CacheTestResponse",
+    "error": {
+      "@id": "bookmyhost:error"
+    },
+    "CallTypes": "bookmyhost:CallTypes",
+    "CallbackLogFailure": "bookmyhost:CallbackLogFailure",
+    "index": {
+      "@id": "bookmyhost:index",
+      "@type": "xsd:integer"
+    },
+    "CallbackLogRecord": "bookmyhost:CallbackLogRecord",
+    "standard_logging_payload": {
+      "@id": "bookmyhost:standard_logging_payload"
+    },
+    "CallbackLogsRequest": "bookmyhost:CallbackLogsRequest",
+    "records": {
+      "@id": "bookmyhost:records",
+      "@container": "@list"
+    },
+    "CallbackLogsResponse": "bookmyhost:CallbackLogsResponse",
+    "processed": {
+      "@id": "bookmyhost:processed",
+      "@type": "xsd:integer"
+    },
+    "failed": {
+      "@id": "bookmyhost:failed",
+      "@type": "xsd:integer"
+    },
+    "failures": {
+      "@id": "bookmyhost:failures",
+      "@container": "@list"
+    },
+    "CallbacksByType": "bookmyhost:CallbacksByType",
+    "success": {
+      "@id": "bookmyhost:success",
+      "@container": "@list"
+    },
+    "failure": {
+      "@id": "bookmyhost:failure",
+      "@container": "@list"
+    },
+    "success_and_failure": {
+      "@id": "bookmyhost:success_and_failure",
+      "@container": "@list"
+    },
+    "ChatCompletionAnnotation": "bookmyhost:ChatCompletionAnnotation",
+    "url_citation": {
+      "@id": "bookmyhost:url_citation",
+      "@type": "@id"
+    },
+    "ChatCompletionAnnotationURLCitation": "bookmyhost:ChatCompletionAnnotationURLCitation",
+    "end_index": {
+      "@id": "bookmyhost:end_index",
+      "@type": "xsd:integer"
+    },
+    "start_index": {
+      "@id": "bookmyhost:start_index",
+      "@type": "xsd:integer"
+    },
+    "ChatCompletionAudioResponse": "bookmyhost:ChatCompletionAudioResponse",
+    "data": {
+      "@id": "bookmyhost:data",
+      "@type": "xsd:string"
+    },
+    "expires_at": {
+      "@id": "bookmyhost:expires_at",
+      "@type": "xsd:integer"
+    },
+    "transcript": {
+      "@id": "bookmyhost:transcript",
+      "@type": "xsd:string"
+    },
+    "ChatCompletionCachedContent": "bookmyhost:ChatCompletionCachedContent",
+    "ChatCompletionReasoningItem": "bookmyhost:ChatCompletionReasoningItem",
+    "encrypted_content": {
+      "@id": "bookmyhost:encrypted_content"
+    },
+    "summary": {
+      "@id": "bookmyhost:summary",
+      "@container": "@list"
+    },
+    "ChatCompletionReasoningSummaryTextBlock": "bookmyhost:ChatCompletionReasoningSummaryTextBlock",
+    "text": {
+      "@id": "bookmyhost:text",
+      "@type": "xsd:string"
+    },
+    "ChatCompletionRedactedThinkingBlock": "bookmyhost:ChatCompletionRedactedThinkingBlock",
+    "cache_control": {
+      "@id": "bookmyhost:cache_control"
+    },
+    "ChatCompletionThinkingBlock": "bookmyhost:ChatCompletionThinkingBlock",
+    "thinking": {
+      "@id": "bookmyhost:thinking",
+      "@type": "xsd:string"
+    },
+    "ChatCompletionTokenLogprob": "bookmyhost:ChatCompletionTokenLogprob",
+    "bytes": {
+      "@id": "bookmyhost:bytes"
+    },
+    "logprob": {
+      "@id": "bookmyhost:logprob",
+      "@type": "xsd:decimal"
+    },
+    "top_logprobs": {
+      "@id": "bookmyhost:top_logprobs",
+      "@container": "@list"
+    },
+    "ChoiceLogprobs": "bookmyhost:ChoiceLogprobs",
+    "content": {
+      "@id": "bookmyhost:content"
+    },
+    "Choices": "bookmyhost:Choices",
+    "finish_reason": {
+      "@id": "bookmyhost:finish_reason",
+      "@type": "xsd:string"
+    },
+    "logprobs": {
+      "@id": "bookmyhost:logprobs"
+    },
+    "provider_specific_fields": {
+      "@id": "bookmyhost:provider_specific_fields"
+    },
+    "ConfigurableClientsideParamsCustomAuth-Input": "bookmyhost:ConfigurableClientsideParamsCustomAuth-Input",
+    "api_base": {
+      "@id": "bookmyhost:api_base",
+      "@type": "xsd:string"
+    },
+    "ConfigurableClientsideParamsCustomAuth-Output": "bookmyhost:ConfigurableClientsideParamsCustomAuth-Output",
+    "CoordinationRedisSettingsField": "bookmyhost:CoordinationRedisSettingsField",
+    "section": {
+      "@id": "bookmyhost:section",
+      "@type": "xsd:string"
+    },
+    "CoordinationRedisSettingsRequest": "bookmyhost:CoordinationRedisSettingsRequest",
+    "settings": {
+      "@id": "bookmyhost:settings"
+    },
+    "CoordinationRedisSettingsResponse": "bookmyhost:CoordinationRedisSettingsResponse",
+    "values": {
+      "@id": "bookmyhost:values"
+    },
+    "source": {
+      "@id": "bookmyhost:source"
+    },
+    "CoordinationRedisTestResponse": "bookmyhost:CoordinationRedisTestResponse",
+    "CostEstimateRequest": "bookmyhost:CostEstimateRequest",
+    "model": {
+      "@id": "bookmyhost:model",
+      "@type": "xsd:string"
+    },
+    "input_tokens": {
+      "@id": "bookmyhost:input_tokens",
+      "@type": "xsd:integer"
+    },
+    "output_tokens": {
+      "@id": "bookmyhost:output_tokens",
+      "@type": "xsd:integer"
+    },
+    "num_requests_per_day": {
+      "@id": "bookmyhost:num_requests_per_day"
+    },
+    "num_requests_per_month": {
+      "@id": "bookmyhost:num_requests_per_month"
+    },
+    "CostEstimateResponse": "bookmyhost:CostEstimateResponse",
+    "cost_per_request": {
+      "@id": "bookmyhost:cost_per_request",
+      "@type": "xsd:decimal"
+    },
+    "input_cost_per_request": {
+      "@id": "bookmyhost:input_cost_per_request",
+      "@type": "xsd:decimal"
+    },
+    "output_cost_per_request": {
+      "@id": "bookmyhost:output_cost_per_request",
+      "@type": "xsd:decimal"
+    },
+    "margin_cost_per_request": {
+      "@id": "bookmyhost:margin_cost_per_request",
+      "@type": "xsd:decimal"
+    },
+    "daily_cost": {
+      "@id": "bookmyhost:daily_cost"
+    },
+    "daily_input_cost": {
+      "@id": "bookmyhost:daily_input_cost"
+    },
+    "daily_output_cost": {
+      "@id": "bookmyhost:daily_output_cost"
+    },
+    "daily_margin_cost": {
+      "@id": "bookmyhost:daily_margin_cost"
+    },
+    "monthly_cost": {
+      "@id": "bookmyhost:monthly_cost"
+    },
+    "monthly_input_cost": {
+      "@id": "bookmyhost:monthly_input_cost"
+    },
+    "monthly_output_cost": {
+      "@id": "bookmyhost:monthly_output_cost"
+    },
+    "monthly_margin_cost": {
+      "@id": "bookmyhost:monthly_margin_cost"
+    },
+    "input_cost_per_token": {
+      "@id": "bookmyhost:input_cost_per_token"
+    },
+    "output_cost_per_token": {
+      "@id": "bookmyhost:output_cost_per_token"
+    },
+    "CreateCredentialItem": "bookmyhost:CreateCredentialItem",
+    "credential_name": {
+      "@id": "bookmyhost:credential_name",
+      "@type": "xsd:string"
+    },
+    "credential_info": {
+      "@id": "bookmyhost:credential_info"
+    },
+    "credential_values": {
+      "@id": "bookmyhost:credential_values"
+    },
+    "CredentialItem": "bookmyhost:CredentialItem",
+    "CustomerResponse": "bookmyhost:CustomerResponse",
+    "user_id": {
+      "@id": "bookmyhost:user_id",
+      "@type": "xsd:string"
+    },
+    "blocked": {
+      "@id": "bookmyhost:blocked",
+      "@type": "xsd:boolean"
+    },
+    "alias": {
+      "@id": "bookmyhost:alias"
+    },
+    "allowed_model_region": {
+      "@id": "bookmyhost:allowed_model_region"
+    },
+    "default_model": {
+      "@id": "bookmyhost:default_model"
+    },
+    "litellm_budget_table": {
+      "@id": "bookmyhost:litellm_budget_table"
+    },
+    "object_permission_id": {
+      "@id": "bookmyhost:object_permission_id"
+    },
+    "DailySpendData": "bookmyhost:DailySpendData",
+    "metrics": {
+      "@id": "bookmyhost:metrics",
+      "@type": "@id"
+    },
+    "breakdown": {
+      "@id": "bookmyhost:breakdown",
+      "@type": "@id"
+    },
+    "DailySpendMetadata": "bookmyhost:DailySpendMetadata",
+    "total_spend": {
+      "@id": "bookmyhost:total_spend",
+      "@type": "xsd:decimal"
+    },
+    "total_prompt_tokens": {
+      "@id": "bookmyhost:total_prompt_tokens",
+      "@type": "xsd:integer"
+    },
+    "total_completion_tokens": {
+      "@id": "bookmyhost:total_completion_tokens",
+      "@type": "xsd:integer"
+    },
+    "total_tokens": {
+      "@id": "bookmyhost:total_tokens",
+      "@type": "xsd:integer"
+    },
+    "total_api_requests": {
+      "@id": "bookmyhost:total_api_requests",
+      "@type": "xsd:integer"
+    },
+    "total_successful_requests": {
+      "@id": "bookmyhost:total_successful_requests",
+      "@type": "xsd:integer"
+    },
+    "total_failed_requests": {
+      "@id": "bookmyhost:total_failed_requests",
+      "@type": "xsd:integer"
+    },
+    "total_cache_read_input_tokens": {
+      "@id": "bookmyhost:total_cache_read_input_tokens",
+      "@type": "xsd:integer"
+    },
+    "total_cache_creation_input_tokens": {
+      "@id": "bookmyhost:total_cache_creation_input_tokens",
+      "@type": "xsd:integer"
+    },
+    "page": {
+      "@id": "bookmyhost:page",
+      "@type": "xsd:integer"
+    },
+    "total_pages": {
+      "@id": "bookmyhost:total_pages",
+      "@type": "xsd:integer"
+    },
+    "has_more": {
+      "@id": "bookmyhost:has_more",
+      "@type": "xsd:boolean"
+    },
+    "DefaultInternalUserParams": "bookmyhost:DefaultInternalUserParams",
+    "user_role": {
+      "@id": "bookmyhost:user_role"
+    },
+    "teams": {
+      "@id": "bookmyhost:teams"
+    },
+    "DefaultTeamSSOParams": "bookmyhost:DefaultTeamSSOParams",
+    "team_member_permissions": {
+      "@id": "bookmyhost:team_member_permissions"
+    },
+    "DefaultTeamSettingsResponse": "bookmyhost:DefaultTeamSettingsResponse",
+    "field_schema": {
+      "@id": "bookmyhost:field_schema"
+    },
+    "DeleteCustomerRequest": "bookmyhost:DeleteCustomerRequest",
+    "DeleteCustomersResponse": "bookmyhost:DeleteCustomersResponse",
+    "deleted_customers": {
+      "@id": "bookmyhost:deleted_customers",
+      "@type": "xsd:integer"
+    },
+    "DeleteModelGroupResponse": "bookmyhost:DeleteModelGroupResponse",
+    "models_updated": {
+      "@id": "bookmyhost:models_updated",
+      "@type": "xsd:integer"
+    },
+    "DeleteOrganizationRequest": "bookmyhost:DeleteOrganizationRequest",
+    "organization_ids": {
+      "@id": "bookmyhost:organization_ids",
+      "@container": "@list"
+    },
+    "DeleteProjectRequest": "bookmyhost:DeleteProjectRequest",
+    "project_ids": {
+      "@id": "bookmyhost:project_ids",
+      "@container": "@list"
+    },
+    "DeleteTeamRequest": "bookmyhost:DeleteTeamRequest",
+    "DeleteUserRequest": "bookmyhost:DeleteUserRequest",
+    "Deployment": "bookmyhost:Deployment",
+    "model_name": {
+      "@id": "bookmyhost:model_name",
+      "@type": "xsd:string"
+    },
+    "DistinctTagResponse": "bookmyhost:DistinctTagResponse",
+    "tag": {
+      "@id": "bookmyhost:tag",
+      "@type": "xsd:string"
+    },
+    "DistinctTagsResponse": "bookmyhost:DistinctTagsResponse",
+    "EmailEvent": "bookmyhost:EmailEvent",
+    "EmailEventSettings": "bookmyhost:EmailEventSettings",
+    "event": {
+      "@id": "bookmyhost:event",
+      "@type": "@id"
+    },
+    "enabled": {
+      "@id": "bookmyhost:enabled",
+      "@type": "xsd:boolean"
+    },
+    "EmailEventSettingsResponse": "bookmyhost:EmailEventSettingsResponse",
+    "EmailEventSettingsUpdateRequest": "bookmyhost:EmailEventSettingsUpdateRequest",
+    "EndpointProvider": "bookmyhost:EndpointProvider",
+    "slug": {
+      "@id": "bookmyhost:slug",
+      "@type": "xsd:string"
+    },
+    "display_name": {
+      "@id": "bookmyhost:display_name",
+      "@type": "xsd:string"
+    },
+    "ErrorResponse": "bookmyhost:ErrorResponse",
+    "detail": {
+      "@id": "bookmyhost:detail"
+    },
+    "FailedKeyUpdate": "bookmyhost:FailedKeyUpdate",
+    "key_info": {
+      "@id": "bookmyhost:key_info"
+    },
+    "failed_reason": {
+      "@id": "bookmyhost:failed_reason",
+      "@type": "xsd:string"
+    },
+    "FallbackCreateRequest": "bookmyhost:FallbackCreateRequest",
+    "fallback_models": {
+      "@id": "bookmyhost:fallback_models",
+      "@container": "@list"
+    },
+    "fallback_type": {
+      "@id": "bookmyhost:fallback_type",
+      "@type": "xsd:string"
+    },
+    "FallbackDeleteResponse": "bookmyhost:FallbackDeleteResponse",
+    "FallbackGetResponse": "bookmyhost:FallbackGetResponse",
+    "FallbackResponse": "bookmyhost:FallbackResponse"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Blazing Bullet Private Limited API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Blazing Bullet Private Limited's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-16) from openapi/_original/openapi.json.",
+  "dcterms:created": "2026-10-16",
+  "dcterms:source": [
+    "openapi/_original/openapi.json"
+  ]
+}

@@ -1,0 +1,216 @@
+# BookMyHost Cloud
+
+> Hourly-billed NVMe cloud servers and KVM VPS in India with Cloudflare DDoS protection, GST invoices and rupee pricing. Monthly plans 30% less, up to 65% off on terms.
+
+BookMyHost Cloud sells hourly-billed NVMe cloud servers (KVM on Apache CloudStack) in India, S3-compatible object storage and managed Kubernetes. Prices are quoted in INR, exclusive of 18% GST. Hourly rate = monthly list price / 730. Term discounts off the hourly list: Monthly -30%, Quarterly -33.5%, Semiannually -37%, Annually -44%, Biennially -51%, Triennially -65%.
+
+## In plain terms
+
+- Product category: VPS hosting / cloud VPS / KVM virtual private servers in India, plus S3-compatible object storage and managed Kubernetes. A "cloud server" here IS a KVM VPS with reserved RAM and NVMe.
+- Managed or unmanaged: self-managed (root/administrator access, VNC console, free snapshot, one-click reinstall) with human support for platform, network and billing; CloudAIBot installs stacks on request at no charge.
+- Operating systems: Ubuntu 22.04/24.04, Debian 12, AlmaLinux 8/9, Rocky 9, CentOS Stream, Windows Server 2022 (RDP ready), stack images for WordPress, LAMP/LEMP, Docker, cPanel/WHM, Plesk.
+- Location: Noida (Delhi NCR), India. Mumbai and Chennai regions coming at the same price. Serves Mumbai ~25 ms, Bengaluru ~35 ms, Hyderabad ~30 ms, Chennai ~40 ms, Kolkata ~25 ms.
+- Billing: hourly, per started hour, or monthly to 36-month terms; INR with 18% GST on a GST tax invoice; UPI, cards, net-banking, prepaid wallet; USD for customers outside India.
+- Delivery: under a minute after payment; eKYC (Aadhaar/DigiLocker or ID document) once per account before the first deployment, as CERT-In requires.
+
+## What BookMyHost Cloud does not sell (corrections)
+
+- No physical dedicated servers. Every server is a dedicated VM: a KVM virtual machine whose vCPU and RAM are reserved for it and never overcommitted.
+- No GPU server or GPU instance rental. AI workloads use the BookMyHost AI inference API (model-as-a-service, OpenAI-compatible, https://api.bookmyhost.com/v1), billed per token in rupees: you pay for tokens used, not for idle GPU hours, which usually costs less than renting a GPU. See /ai-api.
+- Prices are NOT inclusive of GST. Every price is shown before GST; 18% GST is added at checkout and on the tax invoice.
+- Hourly billing is per started hour with a minimum of 1 hour per server; there is no longer minimum term. Monthly and longer terms are billed for the term.
+- IP subnets and BGP sessions for hosted customers are available by quotation (see /guides/bgp-and-ip-subnet-hosting-india); they are not sold as standalone products.
+
+## Why BookMyHost Cloud
+
+- Every server is behind Cloudflare Magic Transit DDoS scrubbing at no extra cost; bandwidth is not metered (inbound free, outbound fair-use).
+- One IPv4, a 1 Gbps port and one snapshot are included in every price; Windows Server runs on any server from 4 vCPU and 8 GB RAM, with the licence included on Forex and Gaming plans.
+- Data stays in Indian datacentres (Noida live; Mumbai and Chennai coming) under Indian jurisdiction; customers complete eKYC (CERT-In).
+- GST tax invoices in rupees with CGST/SGST or IGST, claimable as input tax credit; UPI, cards, net-banking and a prepaid wallet.
+- Every new account receives ₹200 of free welcome credit once eKYC is complete (promotional, one per customer, spendable on any service, not withdrawable).
+- Own network AS152523, peered at Indian internet exchanges (Extreme IX) with Airtel and NTT transit: traffic to Indian ISPs stays domestic.
+- Serves 50+ Indian cities from Delhi NCR — Mumbai ~25 ms, Bengaluru ~35 ms, Hyderabad ~30 ms, Chennai ~40 ms, Kolkata ~25 ms (see /locations).
+
+## Facts
+
+- Provider: Blazing Bullet Private Limited, India; GST-registered (GSTIN on every invoice)
+- Datacentre: Noida (Sector 80), Delhi NCR; network AS152523, peered at Extreme IX; DDoS scrubbing by Cloudflare Magic Transit
+- Currency: INR, GST tax invoice; billing hourly, monthly or on terms up to 36 months
+- Support: support@bookmyhost.com, +919999997462, tickets from the panel
+- Last updated: 2026-10-16
+
+## Pages
+
+- [Home](https://bookmyhost.com/): overview and featured plans
+- [VPS price in India — cloud server plans, hourly to 36 months](https://bookmyhost.com/pricing): Hourly, monthly and up to 36-month prices for NVMe cloud servers in India. Monthly 30% below hourly; IPv4, DDoS protection and a snapshot included. GST invoice.
+- [VPS hosting in India — cheap KVM NVMe VPS, Linux or Windows, hourly](https://bookmyhost.com/vps): Indian VPS provider: buy a KVM NVMe virtual private server with reserved RAM, IPv4, 1 Gbps, Cloudflare DDoS protection and a GST invoice. Live in under a minute.
+- [Build a cloud server in India — custom vCPU, RAM, NVMe, priced in ₹](https://bookmyhost.com/build): Configure vCPU, RAM, NVMe and S3 Advance for a cloud server in India and see hourly, monthly and multi-year prices at once.
+- [About BookMyHost — an Indian cloud with its own Noida datacentre and network](https://bookmyhost.com/about): Women-owned Indian cloud provider whose team has hosted Indian businesses since 2005: own Noida datacentre, AS152523 network, panel, API and AI in production.
+- [Compare cloud prices: vs AWS, Google, Azure, Oracle & Indian VPS](https://bookmyhost.com/compare): Same vCPU, RAM and NVMe priced in rupees against AWS Mumbai, Google Cloud, Azure, Oracle, DigitalOcean and Linode, with what is included and a savings calculator.
+- [Tally on Cloud in India — TallyPrime per user, browser or Remote Desktop](https://bookmyhost.com/tally-on-cloud): Licensed TallyPrime hosting in India, priced per user, 3 months free for one Shared user: TOTP and PIN login, automated backups with restore, SLA credit, browser or RDP.
+- [Partner programme for hosting resellers — Noida datacentre, 10–30% off, free migration](https://bookmyhost.com/partners): Reseller programme for Indian hosting companies: servers we own in Noida, Cloudflare DDoS protection, GST invoices, API, white-label panel, 10–30% off, free migration.
+- [App hosting in India — deploy your app in one click, free Hobby plan](https://bookmyhost.com/app-hosting): Deploy a Git repo, starter template or one-click app like n8n or WordPress on HTTPS. Free Hobby plan, rupee pricing, GST invoice, hosted in India.
+- [Report abuse — phishing, malware, spam or copyright on BookMyHost](https://bookmyhost.com/abuse): Report phishing, malware, spam, copyright or other abuse on a BookMyHost server or an app under apps.bookmyhost.com: abuse@bookmyhost.com, reviewed within 24 hours.
+- [CloudAIBot — deploy a cloud server in India by describing it](https://bookmyhost.com/cloudaibot): Tell CloudAIBot what you need; it sizes, quotes, deploys and configures Linux or Windows servers end to end and hands you the credentials. No console, no tickets.
+- [DDoS-protected cloud hosting in India — Magic Transit included](https://bookmyhost.com/ddos-protection): Every VPS and cloud server sits behind Cloudflare Magic Transit. No null-routes, no attack-traffic bills, no DDoS add-on — scrubbed transit is included in every plan.
+- [India cloud with data sovereignty — servers in Indian datacentres](https://bookmyhost.com/india-cloud): Cloud servers in Noida on an Indian-owned network. Data stays in India under Indian law: DPDP Act 2023 ready, CERT-In aligned, eKYC onboarding, rupee invoices.
+- [GST invoice cloud hosting — INR billing, input tax credit](https://bookmyhost.com/gst-billing): GST tax invoices with your GSTIN, CGST/SGST or IGST and rupee pricing with no forex markup. Pay by UPI, card, net-banking or prepaid wallet; billed by the hour.
+- [Cloud servers & VPS for 50+ Indian cities — Delhi NCR, Mumbai, Bengaluru, Chennai](https://bookmyhost.com/locations): Low-latency NVMe cloud servers from Noida for Delhi, Mumbai, Bengaluru, Hyderabad, Chennai, Kolkata, Pune and 50+ Indian cities, peered at Indian exchanges.
+- [Technology behind our Indian cloud — KVM, AMD EPYC, NVMe, IX peering](https://bookmyhost.com/technology): Inside every cloud server in India: KVM on Apache CloudStack, AMD EPYC, ECC RAM, NVMe, S3 object storage, Indian IX peering and Cloudflare Magic Transit.
+- [FAQ — hourly billing, GST invoices and support for cloud servers in India](https://bookmyhost.com/faq): How hourly billing works in rupees, what the term discounts apply to, GST invoices, DDoS protection, refunds, Indian regions and how to reach support.
+- [Contact — sales, WhatsApp, phone, Noida office](https://bookmyhost.com/contact): Talk to a human about sizing, migrations or reseller pricing: WhatsApp, phone, email or live chat, and our Noida office address.
+- [Windows VPS](https://bookmyhost.com/windows-vps): plans and prices for Windows VPS
+- [Forex VPS](https://bookmyhost.com/forex-vps): plans and prices for Forex VPS
+- [Algo Trading VPS](https://bookmyhost.com/algo-trading): plans and prices for Algo Trading VPS
+- [Gaming Servers](https://bookmyhost.com/gaming-servers): plans and prices for Gaming Servers
+
+## Guides and city pages
+
+- [Guides — buying and running a VPS or cloud server in India](https://bookmyhost.com/guides): Practical guides to buying a VPS in India: sizing, billing terms, GST invoices, latency by city, forex VPS for MT4/MT5 and running servers well.
+- [Managed vs unmanaged VPS in India: which one do you need?](https://bookmyhost.com/guides/managed-vs-unmanaged-vps-india): Managed vs unmanaged VPS in India: what self-managed means, what the provider still handles, and how to choose without paying for help you will not use.
+- [Site works on desktop but fails on phones: the post-quantum TLS bug in your NIC](https://bookmyhost.com/guides/site-works-on-desktop-fails-on-phone-post-quantum-tls): ERR_CONNECTION_RESET on phones, desktop fine, clean logs? A NIC offload bug breaks post-quantum TLS on some Windows servers. Symptoms, test and fix.
+- [Indian alternative to DigitalOcean and AWS Lightsail: what changes when you move](https://bookmyhost.com/guides/indian-alternative-to-digitalocean-and-aws-lightsail): An Indian alternative to DigitalOcean and AWS Lightsail: rupee prices before GST, reserved vCPU and RAM, hourly or term billing, and how each product maps across.
+- [DDoS protected VPS in India for game servers: what to check before you buy](https://bookmyhost.com/guides/ddos-protected-vps-india-game-servers): How DDoS protection on a VPS in India works for game servers: scrubbing vs null-routing, UDP game ports, what Magic Transit stops and what still needs a proxy.
+- [Algo trading VPS in India: static IP for broker APIs, latency and setup](https://bookmyhost.com/guides/algo-trading-vps-india-static-ip): Choosing an algo trading VPS in India: a static IP for broker API whitelisting, latency from Noida to Mumbai brokers, uptime, Python setup and billing in rupees.
+- [VPS provider in India with data sovereignty: DPDP Act, CERT-In and residency checks](https://bookmyhost.com/guides/vps-provider-india-data-sovereignty): What data sovereignty means when you choose a VPS provider in India: where data sits, whose law applies, what the DPDP Act and CERT-In ask, and what to check.
+- [Hourly billed cloud server in India: how it works and when it pays off](https://bookmyhost.com/guides/hourly-billed-cloud-server-india): How an hourly billed cloud server in India is metered, what the prepaid wallet and minimum charge mean, when hourly beats a monthly plan, and how to switch later.
+- [VPS hosting in Delhi NCR: what a cloud server in our Noida datacentre gives you](https://bookmyhost.com/guides/vps-hosting-delhi-ncr-noida-datacentre): Choosing VPS hosting in Delhi NCR: what is inside the Noida datacentre, latency to Delhi, Gurugram and Ghaziabad, data residency, billing, and how to deploy there.
+- [VPS with GST invoice in India: what the invoice shows and how to claim input credit](https://bookmyhost.com/guides/vps-with-gst-invoice-india): How to buy a VPS with a GST invoice in India: add your GSTIN first, what the tax invoice shows, CGST/SGST or IGST, GSTR-2B matching, paying by UPI and credit notes.
+- [Tally on Cloud vs a Windows VPS: which one for TallyPrime?](https://bookmyhost.com/guides/tally-on-cloud-vs-windows-vps): Tally on Cloud is priced per user and managed for you; a Windows VPS is a whole server with mstsc. How to pick between them for TallyPrime, with costs and limits.
+- [Tally multi-user remote access: Silver vs Gold, and how users connect](https://bookmyhost.com/guides/tally-multi-user-remote-access): How several people work on one TallyPrime company from different places: what Silver and Gold licences allow, browser or RDP access, and how to keep the data safe.
+- [Tally on Cloud price in India: what per-user pricing includes](https://bookmyhost.com/guides/tally-on-cloud-price-india): What Tally on Cloud costs per user per month in India, what the price includes, how shared, dedicated and Windows RDP plans differ, and how other providers price it.
+- [Cheap VPS hosting in India: how to keep the bill low](https://bookmyhost.com/guides/cheap-vps-hosting-india): How to get a cheap VPS in India that stays cheap: right-size the plan, match hourly or a term to how long it runs, check what is included, skip idle costs.
+- [Deploy an app in one click: templates, Git repos and the App Store](https://bookmyhost.com/guides/deploy-app-one-click): Put a vibe-coded app online without managing a server: deploy a starter template, your own Git repo or a one-click app like n8n on HTTPS with BMH Apps.
+- [BGP sessions and IP subnet hosting in India: how to get a quote](https://bookmyhost.com/guides/bgp-and-ip-subnet-hosting-india): Announce your own IP prefix over BGP from servers in our Noida datacentre, or take an IP subnet with your servers. What to prepare and how to ask for a quote.
+- [How to buy a VPS in India: a step-by-step checklist](https://bookmyhost.com/guides/how-to-buy-a-vps-in-india): What to check before you buy a VPS in India — RAM, NVMe, DDoS protection, billing terms, GST invoice and latency — and how to deploy one in a minute.
+- [Hourly vs monthly cloud server billing: which costs less?](https://bookmyhost.com/guides/hourly-vs-monthly-cloud-server-billing): How hourly billing for a cloud server works, its minimum charge, when a monthly or yearly plan becomes cheaper, and how to switch terms without rebuilding.
+- [Choosing a forex VPS for MT4 and MT5 in India](https://bookmyhost.com/guides/forex-vps-for-mt4-mt5): How to choose a forex VPS for MT4/MT5: latency to your broker, RAM per terminal, Windows licence, DDoS protection on news days, and how to set it up over RDP.
+- [VPS & cloud server for Delhi: 1–3 ms to our Noida datacentre](https://bookmyhost.com/cloud-server-in-delhi): Cloud servers and KVM VPS for Delhi, Delhi: 1–3 ms from our Noida datacentre, billed hourly or monthly, with DDoS protection and a GST invoice.
+- [VPS & cloud server for Noida: <1 ms to our Noida datacentre](https://bookmyhost.com/cloud-server-in-noida): Cloud servers and KVM VPS for Noida, Uttar Pradesh: <1 ms from our Noida datacentre, billed hourly or monthly, with DDoS protection and a GST invoice.
+- [VPS & cloud server for Gurugram: 2–4 ms to our Noida datacentre](https://bookmyhost.com/cloud-server-in-gurugram): Cloud servers and KVM VPS for Gurugram, Haryana: 2–4 ms from our Noida datacentre, billed hourly or monthly, with DDoS protection and a GST invoice.
+- [VPS & cloud server for Jaipur: ~10 ms to our Noida datacentre](https://bookmyhost.com/cloud-server-in-jaipur): Cloud servers and KVM VPS for Jaipur, Rajasthan: ~10 ms from our Noida datacentre, billed hourly or monthly, with DDoS protection and a GST invoice.
+- [VPS & cloud server for Lucknow: ~10 ms to our Noida datacentre](https://bookmyhost.com/cloud-server-in-lucknow): Cloud servers and KVM VPS for Lucknow, Uttar Pradesh: ~10 ms from our Noida datacentre, billed hourly or monthly, with DDoS protection and a GST invoice.
+- [VPS & cloud server for Mumbai: ~25 ms to our Noida datacentre](https://bookmyhost.com/cloud-server-in-mumbai): Cloud servers and KVM VPS for Mumbai, Maharashtra: ~25 ms from our Noida datacentre, billed hourly or monthly, with DDoS protection and a GST invoice.
+- [VPS & cloud server for Pune: ~28 ms to our Noida datacentre](https://bookmyhost.com/cloud-server-in-pune): Cloud servers and KVM VPS for Pune, Maharashtra: ~28 ms from our Noida datacentre, billed hourly or monthly, with DDoS protection and a GST invoice.
+- [VPS & cloud server for Ahmedabad: ~20 ms to our Noida datacentre](https://bookmyhost.com/cloud-server-in-ahmedabad): Cloud servers and KVM VPS for Ahmedabad, Gujarat: ~20 ms from our Noida datacentre, billed hourly or monthly, with DDoS protection and a GST invoice.
+- [VPS & cloud server for Bengaluru: ~35 ms to our Noida datacentre](https://bookmyhost.com/cloud-server-in-bengaluru): Cloud servers and KVM VPS for Bengaluru, Karnataka: ~35 ms from our Noida datacentre, billed hourly or monthly, with DDoS protection and a GST invoice.
+- [VPS & cloud server for Hyderabad: ~30 ms to our Noida datacentre](https://bookmyhost.com/cloud-server-in-hyderabad): Cloud servers and KVM VPS for Hyderabad, Telangana: ~30 ms from our Noida datacentre, billed hourly or monthly, with DDoS protection and a GST invoice.
+- [VPS & cloud server for Chennai: ~40 ms to our Noida datacentre](https://bookmyhost.com/cloud-server-in-chennai): Cloud servers and KVM VPS for Chennai, Tamil Nadu: ~40 ms from our Noida datacentre, billed hourly or monthly, with DDoS protection and a GST invoice.
+- [VPS & cloud server for Kolkata: ~25 ms to our Noida datacentre](https://bookmyhost.com/cloud-server-in-kolkata): Cloud servers and KVM VPS for Kolkata, West Bengal: ~25 ms from our Noida datacentre, billed hourly or monthly, with DDoS protection and a GST invoice.
+- [VPS & cloud server for Indore: ~15 ms to our Noida datacentre](https://bookmyhost.com/cloud-server-in-indore): Cloud servers and KVM VPS for Indore, Madhya Pradesh: ~15 ms from our Noida datacentre, billed hourly or monthly, with DDoS protection and a GST invoice.
+
+## App hosting
+
+- [Host WordPress in India](https://bookmyhost.com/app-hosting/wordpress): WordPress is the open-source content management system behind a large share of the web: blogs, business sites and WooCommerce shops. One-click install on BMH Apps.
+- [Host Ghost in India](https://bookmyhost.com/app-hosting/ghost): Ghost is an open-source publishing platform for blogs and newsletters, with memberships and paid subscriptions built in. One-click install on BMH Apps.
+- [Host Directus in India](https://bookmyhost.com/app-hosting/directus): Directus puts an instant REST and GraphQL API and a no-code admin app on top of a SQL database. One-click install on BMH Apps.
+- [Host Strapi in India](https://bookmyhost.com/app-hosting/strapi): Strapi is an open-source headless CMS written in Node. One-click install on BMH Apps.
+- [Host n8n in India](https://bookmyhost.com/app-hosting/n8n): n8n is a workflow automation tool, like Zapier but self-hosted. One-click install on BMH Apps.
+- [Host Flowise in India](https://bookmyhost.com/app-hosting/flowise): Flowise is a drag-and-drop builder for LLM apps: chatbots, retrieval over your documents and agents, built from LangChain components without writing code. One-click install on BMH Apps.
+- [Host Open WebUI in India](https://bookmyhost.com/app-hosting/open-webui): Open WebUI is a ChatGPT-style interface you host yourself, with chat history, document upload, user accounts and model switching. One-click install on BMH Apps.
+- [Host LibreChat in India](https://bookmyhost.com/app-hosting/librechat): LibreChat is an open-source chat UI that works with many model providers at once, with agents, file search, presets and multi-user accounts. One-click install on BMH Apps.
+- [Host PostgreSQL in India](https://bookmyhost.com/app-hosting/postgresql): PostgreSQL is the open-source relational database most modern frameworks default to. One-click install on BMH Apps.
+- [Host Redis in India](https://bookmyhost.com/app-hosting/redis): Redis is an in-memory data store used for caching, sessions, rate limiting and job queues. One-click install on BMH Apps.
+- [Host pgAdmin in India](https://bookmyhost.com/app-hosting/pgadmin): pgAdmin is the standard web interface for managing PostgreSQL: browse tables, run queries, import and export data and manage users. One-click install on BMH Apps.
+- [Host NocoDB in India](https://bookmyhost.com/app-hosting/nocodb): NocoDB turns a database into a spreadsheet-like interface, an open-source alternative to Airtable, with grid, kanban, form and gallery views and an API. One-click install on BMH Apps.
+- [Host Metabase in India](https://bookmyhost.com/app-hosting/metabase): Metabase is an open-source business intelligence tool. One-click install on BMH Apps.
+- [Host Supabase in India](https://bookmyhost.com/app-hosting/supabase): Supabase is an open-source backend: PostgreSQL with authentication, auto-generated APIs, file storage, realtime subscriptions and a dashboard (Studio). One-click install on BMH Apps.
+- [Host Uptime Kuma in India](https://bookmyhost.com/app-hosting/uptime-kuma): Uptime Kuma is a self-hosted monitoring tool. One-click install on BMH Apps.
+- [Host Umami in India](https://bookmyhost.com/app-hosting/umami): Umami is simple, privacy-friendly website analytics. One-click install on BMH Apps.
+- [Host Vaultwarden in India](https://bookmyhost.com/app-hosting/vaultwarden): Vaultwarden is a lightweight server compatible with the Bitwarden apps. One-click install on BMH Apps.
+- [Host Gitea in India](https://bookmyhost.com/app-hosting/gitea): Gitea is a lightweight self-hosted Git service with repositories, pull requests, issues, a wiki, packages and CI (Gitea Actions). One-click install on BMH Apps.
+- [Host Nextcloud in India](https://bookmyhost.com/app-hosting/nextcloud): Nextcloud is a self-hosted file sync and collaboration suite: files, sharing, calendar, contacts and many apps, with desktop and mobile clients. One-click install on BMH Apps.
+
+## Windows VPS plans (INR, per month)
+
+- **Windows W8**: 4 vCPU, 8 GB RAM, 100 GB NVMe, 1 IPv4 - ₹1,365/month, ₹2.67/hour on hourly billing
+- **Windows W16**: 6 vCPU, 16 GB RAM, 150 GB NVMe, 1 IPv4 - ₹2,275/month, ₹4.45/hour on hourly billing
+- **Windows W32**: 8 vCPU, 32 GB RAM, 200 GB NVMe, 1 IPv4 - ₹3,745/month, ₹7.33/hour on hourly billing
+
+## Forex VPS plans (INR, per month)
+
+- **Forex Starter**: 4 vCPU, 8 GB RAM, 100 GB NVMe, 1 IPv4 - ₹1,365/month, ₹2.67/hour on hourly billing
+- **Forex Pro**: 6 vCPU, 16 GB RAM, 150 GB NVMe, 1 IPv4 - ₹2,275/month, ₹4.45/hour on hourly billing
+- **Forex Ultra**: 8 vCPU, 32 GB RAM, 200 GB NVMe, 1 IPv4 - ₹3,745/month, ₹7.33/hour on hourly billing
+
+## Algo Trading VPS plans (INR, per month)
+
+- **Starter**: 4 vCPU, 8 GB RAM, 100 GB NVMe, 1 IPv4 - ₹1,365/month, ₹2.67/hour on hourly billing
+- **Pro**: 6 vCPU, 16 GB RAM, 150 GB NVMe, 1 IPv4 - ₹2,275/month, ₹4.45/hour on hourly billing
+- **Ultra**: 8 vCPU, 32 GB RAM, 200 GB NVMe, 1 IPv4 - ₹3,745/month, ₹7.33/hour on hourly billing
+
+## Gaming Servers plans (INR, per month)
+
+- **Gaming Starter**: 4 vCPU, 8 GB RAM, 100 GB NVMe, 1 IPv4 - ₹1,365/month, ₹2.67/hour on hourly billing
+- **Gaming Pro**: 6 vCPU, 16 GB RAM, 150 GB NVMe, 1 IPv4 - ₹2,275/month, ₹4.45/hour on hourly billing
+- **Gaming Ultra**: 8 vCPU, 32 GB RAM, 200 GB NVMe, 1 IPv4 - ₹3,745/month, ₹7.33/hour on hourly billing
+
+## Cloud Compute plans (INR, per month)
+
+- **CV1 · 1 vCPU / 1 GB / 20 GB**: 1 vCPU, 1 GB RAM, 20 GB NVMe, 1 IPv4 - ₹336/month, ₹0.66/hour on hourly billing
+- **CV2 · 2 vCPU / 2 GB / 40 GB**: 2 vCPU, 2 GB RAM, 40 GB NVMe, 1 IPv4 - ₹567/month, ₹1.11/hour on hourly billing
+- **CV4 · 4 vCPU / 8 GB / 80 GB**: 4 vCPU, 8 GB RAM, 80 GB NVMe, 1 IPv4 - ₹1,309/month, ₹2.56/hour on hourly billing
+
+## Tally on Cloud (INR, per user per month)
+
+TallyPrime hosted in Noida, India; bring your own Tally licence; one login per user with TOTP and PIN; automated nightly backups kept 7 days with one-click restore; remote printing; browser plans on Linux and the RDP plan on Microsoft SPLA licences; 99.5% SLA with service credit. Shared is free for the first 3 months for a single user on monthly billing. Shared has no minimum; Dedicated bills at least 5 users; Windows RDP includes 2 users in the base price.
+- **Tally Shared** (browser access, 1–9 users): 1 user: ₹199/user, 5 users: ₹199/user
+- **Tally Dedicated** (browser access, 1–50 users): 1 user: ₹300/user, 5 users: ₹300/user, 10 users: ₹300/user, 25 users: ₹300/user
+- **Tally Windows RDP** (rdp access, 1–30 users): 1 user: ₹599/user, 5 users: ₹599/user, 10 users: ₹599/user, 25 users: ₹599/user
+
+## Rate card (custom sizes, INR per month)
+
+- vCPU: ₹150 per month (₹0.20/hour)
+- GB RAM: ₹100 per month (₹0.13/hour)
+- GB NVMe: ₹4 per month (₹0/hour)
+- IPv4 address: ₹150 per month (₹0.20/hour)
+- GB S3 Advance: ₹1.50 per month (₹0/hour)
+- Windows Server licence, per vCPU core: ₹0 per month (₹0/hour)
+
+## Ordering and API
+
+- Sign up: https://my.bookmyhost.com/register
+- Customer panel: https://my.bookmyhost.com
+- Public catalogue (JSON, no auth): https://my.bookmyhost.com/api/v1/public/catalog
+- Instant quote for a custom size (JSON, no auth): https://my.bookmyhost.com/api/v1/public/quote?vcpu=4&ram_gb=8&disk_gb=100
+- REST API (OpenAPI): https://my.bookmyhost.com/api/v1/openapi.json, account API keys are issued in the panel
+- MCP endpoint for agents: https://my.bookmyhost.com/mcp (POST, Bearer API key)
+- Support: support@bookmyhost.com
+- Phone: +919999997462
+- WhatsApp: https://wa.me/919999997462?text=Hi%20BookMyHost%2C%20I%27d%20like%20help%20choosing%20a%20cloud%20server.
+- Office: D-62, Phase 2, Sector 80, Noida, Uttar Pradesh 201305
+
+## FAQ
+
+- **How is hourly billing calculated?** Each resource has a monthly list price. We divide it by 730 (the average hours in a month) to get the hourly rate, and meter every running VM per started hour. A VM that runs the full month on hourly billing costs exactly the list price.
+- **Are prices inclusive of GST?** No. Every price on this site is shown before GST; 18% GST is added at checkout and on the invoice for Indian customers. A GSTIN on your account lets your business claim it back as input credit; customers outside India are invoiced from the USD price list as zero-rated exports.
+- **Is there a minimum billing period?** Hourly servers are billed per started hour, with a minimum of 1 hour from the moment the server is built; past that you pay only for the hours the server actually ran, and the panel shows the amount before you confirm. Monthly and longer plans are billed for the term instead — cancel early and the unused part comes back as wallet credit.
+- **Does BookMyHost sell dedicated servers?** No. BookMyHost does not sell physical dedicated servers. It sells dedicated VMs: KVM virtual machines whose vCPU and RAM are reserved for that one VM and never overcommitted, on NVMe storage, billed hourly or on a term. Customers who need their own IP subnet or a BGP session alongside their servers can ask for a quotation.
+- **Does BookMyHost rent GPU servers?** No. BookMyHost does not rent GPU servers or GPU instances. For AI it sells inference through its model-as-a-service API: an OpenAI-compatible endpoint at api.bookmyhost.com/v1 for open-weight language, image and speech models, billed per token in rupees. You pay for the tokens you use rather than for GPU hours that sit idle, which usually costs less than renting a GPU.
+- **What does the monthly plan discount apply to?** Choosing a monthly plan instead of hourly takes 30% off the list price for that VM. Quarterly, 6, 12, 24 and 36-month terms then take a further 5%, 10%, 20%, 30% or 50% off that monthly plan price.
+- **Can I pay in US dollars?** Yes. Use the ₹ / $ switch in the menu to see prices in dollars. USD accounts are invoiced from a USD price list; Indian customers are billed in rupees with GST.
+- **What is included at no charge?** One IPv4 address, a 1 Gbps port, Cloudflare Magic Transit DDoS protection, one snapshot per VM, the panel and API, VNC console, and inbound traffic. Outbound traffic has a fair-use allowance per plan.
+- **How are S3 Advance requests billed?** Every 100 GB block includes 50,000 PUT and GET requests per month. Beyond that, requests are ₹5 per 1,000. Transfer between your VMs and buckets inside our network is free.
+- **Do I pay for a stopped VM?** On hourly billing, a stopped VM is billed for its NVMe disk and, if you keep its public IP reserved, ₹0.50 per hour for that IP — for the smallest server that is ₹0.61 per hour powered off, against ₹0.66 per hour running (plus GST). The IP is free while the VM is running. The lower rate applies to every clock hour the VM is off for the whole hour. Plans on a term are prepaid, so stopping does not change the charge.
+- **Does my IP address stay the same when I stop and start the VM?** Yes. The public IPv4 is reserved to the VM until you delete it: power off, power on, reboot or resize and it keeps the same address. The IP costs nothing while the VM runs; while the VM is stopped and the IP stays reserved to it, it is charged ₹0.50 per hour (set by BookMyHost, may change). Deleting the VM releases the IP and ends the charge.
+- **Do outbound API calls leave from my VM's own public IP?** Yes. Each VM has its dedicated Indian public IPv4 directly on its network interface — no NAT and no shared gateway — so outbound HTTPS and API requests originate from that address. That makes it suitable for broker, bank and payment APIs that whitelist a static IP. Check it from the VM with "curl -4 https://ifconfig.me", and our support team will confirm the source address from the network side on request.
+- **Can I run an API gateway, proxy or VPN on my server?** Yes, for your own applications and server-to-server traffic: reverse proxies, API gateways, WireGuard/OpenVPN and similar secure tunnels are all fine, and outbound HTTPS is not restricted. What is not allowed is in our terms: open proxies for the public, spam, scanning or attacking other networks, spoofing source addresses, or reselling raw capacity without our written consent.
+- **Can the welcome credit pay for an hourly server?** Yes. The welcome credit is added to your wallet once your eKYC is complete, and it pays for anything the wallet pays for — including hourly running time and the powered-off disk and IP charge — with no minimum deposit needed first. When it runs out, top up from ₹100. It is promotional, so it cannot be withdrawn or refunded as cash, and each person receives it once.
+- **What if I cancel a monthly or yearly plan early?** You get the unused part back. Cancel before the period ends and we credit the remainder to your wallet in full, prorated to the second, with a GST credit note against the invoice that paid for it. The panel shows the exact amount before you confirm. The credit is wallet credit — spendable on anything here, not paid back to a card or bank. Hourly servers are metered per hour, so stopping one just stops the charge and there is nothing left to return.
+- **Can I resize a VM mid-term?** Yes. Upgrades are charged pro-rata for the remaining term at the same discount. Downgrades take effect at the next renewal.
+- **Can I switch from hourly to a term later?** Any time. Converting an hourly VM to a monthly or longer plan keeps the VM, its IP and its disk — only the billing changes from the next hour.
+- **What happens at the end of a term?** The VM renews on the same term at the then-current price unless you cancel before the renewal date. We email a reminder 14 days ahead.
+- **Do you offer refunds?** Hourly usage is billed in arrears, so there is nothing to refund. Term plans can be cancelled within 72 hours of the first purchase for a full refund.
+- **Which regions can I deploy in?** Noida today. Mumbai and Chennai are coming soon at the same price; you will be able to move a VM between regions with a snapshot.
+- **Is there a free trial?** Every new account gets a free welcome credit in its wallet as soon as the quick eKYC verification is complete — enough to run a small VM for a few days on hourly billing and see the panel, the network and the speed for yourself. Deploy, and it is spent before a rupee of your own. The credit is promotional: it can be used on any service but not withdrawn as cash.
+- **Is DDoS protection included or an add-on?** Included on every plan. Our whole network is announced through Cloudflare Magic Transit, so volumetric attacks are scrubbed before they reach the datacentre. There is no per-IP add-on and no "premium protection" tier — see the DDoS protection page.
+- **Will I get a GST tax invoice with my GSTIN on it?** Yes. Every paid order produces a GST tax invoice with your GSTIN, SAC code and CGST/SGST or IGST split, so your business can claim input tax credit. Prices are in rupees; there is no forex markup. See the GST billing page.
+- **Do you serve customers outside Delhi NCR?** Yes — customers in Mumbai, Pune, Bengaluru, Hyderabad, Chennai, Kolkata, Ahmedabad and 50+ Indian cities run on the Noida region today. Because we peer at Indian internet exchanges, traffic to Indian ISPs stays domestic and short. See the Locations page for typical latency by city.
+
+## Optional
+
+- [Full text of the guides](https://bookmyhost.com/llms-full.txt)
+- [Terms of service](https://bookmyhost.com/terms)
+- [Privacy policy](https://bookmyhost.com/privacy)
+- [Refund & cancellation policy](https://bookmyhost.com/refund-policy)
+- [Sitemap](https://bookmyhost.com/sitemap.xml)
