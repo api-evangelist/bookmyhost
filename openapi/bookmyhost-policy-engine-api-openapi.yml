@@ -1,0 +1,1621 @@
+openapi: 3.2.0
+info:
+  title: LiteLLM Policy Engine API
+  description: 'Proxy Server to call 100+ LLMs in the OpenAI format. **Customize Swagger Docs**
+
+
+    👉 ```LiteLLM Admin Panel on /ui```. Create, Edit Keys with SSO. Having issues? Try ```Fallback Login```
+
+
+    💸 ```LiteLLM Model Cost Map```.
+
+
+    🔎 ```LiteLLM Model Hub```. See available models on the proxy. **Docs**'
+  version: 1.93.0
+tags:
+- name: policy_engine
+paths:
+  /policies:
+    post:
+      description: 'Create a new policy.
+
+
+        Example Request:
+
+        ```bash
+
+        curl -X POST "http://localhost:4000/policies" \
+
+        -H "Authorization: Bearer " \
+
+        -H "Content-Type: application/json" \
+
+        -d ''{
+
+        "policy_name": "global-baseline",
+
+        "description": "Base guardrails for all requests",
+
+        "guardrails_add": ["pii_masking", "prompt_injection"],
+
+        "guardrails_remove": []
+
+        }''
+
+        ```
+
+
+        Example Response:
+
+        ```json
+
+        {
+
+        "policy_id": "123e4567-e89b-12d3-a456-426614174000",
+
+        "policy_name": "global-baseline",
+
+        "inherit": null,
+
+        "description": "Base guardrails for all requests",
+
+        "guardrails_add": ["pii_masking", "prompt_injection"],
+
+        "guardrails_remove": [],
+
+        "condition": null,
+
+        "created_at": "2024-01-01T00:00:00Z",
+
+        "updated_at": "2024-01-01T00:00:00Z"
+
+        }
+
+        ```'
+      operationId: create_policy_policies_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PolicyCreateRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyDBResponse'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Create Policy
+      tags:
+      - policy_engine
+  /policies/attachments:
+    post:
+      description: 'Create a new policy attachment.
+
+
+        Example Request:
+
+        ```bash
+
+        curl -X POST "http://localhost:4000/policies/attachments" \
+
+        -H "Authorization: Bearer " \
+
+        -H "Content-Type: application/json" \
+
+        -d ''{
+
+        "policy_name": "global-baseline",
+
+        "scope": "*"
+
+        }''
+
+        ```
+
+
+        Example with team-specific attachment:
+
+        ```bash
+
+        curl -X POST "http://localhost:4000/policies/attachments" \
+
+        -H "Authorization: Bearer " \
+
+        -H "Content-Type: application/json" \
+
+        -d ''{
+
+        "policy_name": "healthcare-compliance",
+
+        "teams": ["healthcare-team", "medical-research"]
+
+        }''
+
+        ```
+
+
+        Example Response:
+
+        ```json
+
+        {
+
+        "attachment_id": "123e4567-e89b-12d3-a456-426614174000",
+
+        "policy_name": "global-baseline",
+
+        "scope": "*",
+
+        "teams": [],
+
+        "keys": [],
+
+        "models": [],
+
+        "created_at": "2024-01-01T00:00:00Z",
+
+        "updated_at": "2024-01-01T00:00:00Z"
+
+        }
+
+        ```'
+      operationId: create_policy_attachment_policies_attachments_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PolicyAttachmentCreateRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyAttachmentDBResponse'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Create Policy Attachment
+      tags:
+      - policy_engine
+  /policies/attachments/estimate-impact:
+    post:
+      description: 'Estimate how many keys and teams would be affected by a policy attachment.
+
+
+        Use this before creating an attachment to preview the blast radius.
+
+
+        Example Request:
+
+        ```bash
+
+        curl -X POST "http://localhost:4000/policies/attachments/estimate-impact" \
+
+        -H "Authorization: Bearer " \
+
+        -H "Content-Type: application/json" \
+
+        -d ''{
+
+        "policy_name": "hipaa-compliance",
+
+        "tags": ["healthcare", "health-*"]
+
+        }''
+
+        ```'
+      operationId: estimate_attachment_impact_policies_attachments_estimate_impact_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PolicyAttachmentCreateRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AttachmentImpactResponse'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Estimate Attachment Impact
+      tags:
+      - policy_engine
+  /policies/attachments/list:
+    get:
+      description: 'List all policy attachments from the database.
+
+
+        Example Request:
+
+        ```bash
+
+        curl -X GET "http://localhost:4000/policies/attachments/list" \
+
+        -H "Authorization: Bearer "
+
+        ```
+
+
+        Example Response:
+
+        ```json
+
+        {
+
+        "attachments": [
+
+        {
+
+        "attachment_id": "123e4567-e89b-12d3-a456-426614174000",
+
+        "policy_name": "global-baseline",
+
+        "scope": "*",
+
+        "teams": [],
+
+        "keys": [],
+
+        "models": [],
+
+        "created_at": "2024-01-01T00:00:00Z",
+
+        "updated_at": "2024-01-01T00:00:00Z"
+
+        }
+
+        ],
+
+        "total_count": 1
+
+        }
+
+        ```'
+      operationId: list_policy_attachments_policies_attachments_list_get
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyAttachmentListResponse'
+          description: Successful Response
+      security:
+      - APIKeyHeader: []
+      summary: List Policy Attachments
+      tags:
+      - policy_engine
+  /policies/attachments/{attachment_id}:
+    delete:
+      description: 'Delete a policy attachment.
+
+
+        Example Request:
+
+        ```bash
+
+        curl -X DELETE "http://localhost:4000/policies/attachments/123e4567-e89b-12d3-a456-426614174000" \
+
+        -H "Authorization: Bearer "
+
+        ```
+
+
+        Example Response:
+
+        ```json
+
+        {
+
+        "message": "Attachment 123e4567-e89b-12d3-a456-426614174000 deleted successfully"
+
+        }
+
+        ```'
+      operationId: delete_policy_attachment_policies_attachments__attachment_id__delete
+      parameters:
+      - in: path
+        name: attachment_id
+        required: true
+        schema:
+          title: Attachment Id
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Delete Policy Attachment
+      tags:
+      - policy_engine
+    get:
+      description: 'Get a policy attachment by ID.
+
+
+        Example Request:
+
+        ```bash
+
+        curl -X GET "http://localhost:4000/policies/attachments/123e4567-e89b-12d3-a456-426614174000" \
+
+        -H "Authorization: Bearer "
+
+        ```'
+      operationId: get_policy_attachment_policies_attachments__attachment_id__get
+      parameters:
+      - in: path
+        name: attachment_id
+        required: true
+        schema:
+          title: Attachment Id
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyAttachmentDBResponse'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Get Policy Attachment
+      tags:
+      - policy_engine
+  /policies/compare:
+    get:
+      description: 'Compare two policy versions. Query params: version_a, version_b (policy version IDs).'
+      operationId: compare_policy_versions_policies_compare_get
+      parameters:
+      - in: query
+        name: version_a
+        required: true
+        schema:
+          title: Version A
+          type: string
+      - in: query
+        name: version_b
+        required: true
+        schema:
+          title: Version B
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyVersionCompareResponse'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Compare Policy Versions
+      tags:
+      - policy_engine
+  /policies/list:
+    get:
+      description: 'List all policies from the database. Optionally filter by version_status.
+
+
+        Query params:
+
+        - version_status: Optional. One of "draft", "published", "production".
+
+        If omitted, all versions are returned.
+
+
+        Example Request:
+
+        ```bash
+
+        curl -X GET "http://localhost:4000/policies/list" \
+
+        -H "Authorization: Bearer "
+
+        curl -X GET "http://localhost:4000/policies/list?version_status=production" \
+
+        -H "Authorization: Bearer "
+
+        ```
+
+
+        Example Response:
+
+        ```json
+
+        {
+
+        "policies": [
+
+        {
+
+        "policy_id": "123e4567-e89b-12d3-a456-426614174000",
+
+        "policy_name": "global-baseline",
+
+        "version_number": 1,
+
+        "version_status": "production",
+
+        "inherit": null,
+
+        "description": "Base guardrails for all requests",
+
+        "guardrails_add": ["pii_masking"],
+
+        "guardrails_remove": [],
+
+        "condition": null,
+
+        "created_at": "2024-01-01T00:00:00Z",
+
+        "updated_at": "2024-01-01T00:00:00Z"
+
+        }
+
+        ],
+
+        "total_count": 1
+
+        }
+
+        ```'
+      operationId: list_policies_policies_list_get
+      parameters:
+      - in: query
+        name: version_status
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Version Status
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyListDBResponse'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: List Policies
+      tags:
+      - policy_engine
+  /policies/name/{policy_name}/all-versions:
+    delete:
+      description: Delete all versions of a policy. Also removes from in-memory registry.
+      operationId: delete_all_policy_versions_policies_name__policy_name__all_versions_delete
+      parameters:
+      - in: path
+        name: policy_name
+        required: true
+        schema:
+          title: Policy Name
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Delete All Policy Versions
+      tags:
+      - policy_engine
+  /policies/name/{policy_name}/versions:
+    get:
+      description: List all versions of a policy by name, ordered by version_number descending.
+      operationId: list_policy_versions_policies_name__policy_name__versions_get
+      parameters:
+      - in: path
+        name: policy_name
+        required: true
+        schema:
+          title: Policy Name
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyVersionListResponse'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: List Policy Versions
+      tags:
+      - policy_engine
+    post:
+      description: 'Create a new draft version of a policy. Copies all fields from the source.
+
+        Source is current production if source_policy_id is not provided.'
+      operationId: create_policy_version_policies_name__policy_name__versions_post
+      parameters:
+      - in: path
+        name: policy_name
+        required: true
+        schema:
+          title: Policy Name
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PolicyVersionCreateRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyDBResponse'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Create Policy Version
+      tags:
+      - policy_engine
+  /policies/resolve:
+    post:
+      description: 'Resolve which policies and guardrails apply for a given context.
+
+
+        Use this endpoint to debug "what guardrails would apply to a request
+
+        with this team/key/model/tags combination?"
+
+
+        Example Request:
+
+        ```bash
+
+        curl -X POST "http://localhost:4000/policies/resolve" \
+
+        -H "Authorization: Bearer " \
+
+        -H "Content-Type: application/json" \
+
+        -d ''{
+
+        "tags": ["healthcare"],
+
+        "model": "gpt-4"
+
+        }''
+
+        ```'
+      operationId: resolve_policies_for_context_policies_resolve_post
+      parameters:
+      - description: Force a DB sync before resolving. Default uses in-memory cache.
+        in: query
+        name: force_sync
+        required: false
+        schema:
+          default: false
+          description: Force a DB sync before resolving. Default uses in-memory cache.
+          title: Force Sync
+          type: boolean
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PolicyResolveRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyResolveResponse'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Resolve Policies For Context
+      tags:
+      - policy_engine
+  /policies/test-pipeline:
+    post:
+      description: 'Test a guardrail pipeline with sample messages.
+
+
+        Executes the pipeline steps against the provided test messages and returns
+
+        step-by-step results showing which guardrails passed/failed, actions taken,
+
+        and timing information.
+
+
+        Example Request:
+
+        ```bash
+
+        curl -X POST "http://localhost:4000/policies/test-pipeline" \
+
+        -H "Authorization: Bearer " \
+
+        -H "Content-Type: application/json" \
+
+        -d ''{
+
+        "pipeline": {
+
+        "mode": "pre_call",
+
+        "steps": [
+
+        {"guardrail": "pii-guard", "on_pass": "next", "on_fail": "block"}
+
+        ]
+
+        },
+
+        "test_messages": [{"role": "user", "content": "My SSN is 123-45-6789"}]
+
+        }''
+
+        ```'
+      operationId: test_pipeline_policies_test_pipeline_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PipelineTestRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Test Pipeline
+      tags:
+      - policy_engine
+  /policies/{policy_id}:
+    delete:
+      description: 'Delete a policy.
+
+
+        Example Request:
+
+        ```bash
+
+        curl -X DELETE "http://localhost:4000/policies/123e4567-e89b-12d3-a456-426614174000" \
+
+        -H "Authorization: Bearer "
+
+        ```
+
+
+        Example Response:
+
+        ```json
+
+        {
+
+        "message": "Policy 123e4567-e89b-12d3-a456-426614174000 deleted successfully"
+
+        }
+
+        ```'
+      operationId: delete_policy_policies__policy_id__delete
+      parameters:
+      - in: path
+        name: policy_id
+        required: true
+        schema:
+          title: Policy Id
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Delete Policy
+      tags:
+      - policy_engine
+    get:
+      description: 'Get a policy by ID.
+
+
+        Example Request:
+
+        ```bash
+
+        curl -X GET "http://localhost:4000/policies/123e4567-e89b-12d3-a456-426614174000" \
+
+        -H "Authorization: Bearer "
+
+        ```'
+      operationId: get_policy_policies__policy_id__get
+      parameters:
+      - in: path
+        name: policy_id
+        required: true
+        schema:
+          title: Policy Id
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyDBResponse'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Get Policy
+      tags:
+      - policy_engine
+    put:
+      description: 'Update an existing policy.
+
+
+        Example Request:
+
+        ```bash
+
+        curl -X PUT "http://localhost:4000/policies/123e4567-e89b-12d3-a456-426614174000" \
+
+        -H "Authorization: Bearer " \
+
+        -H "Content-Type: application/json" \
+
+        -d ''{
+
+        "description": "Updated description",
+
+        "guardrails_add": ["pii_masking", "toxicity_filter"]
+
+        }''
+
+        ```'
+      operationId: update_policy_policies__policy_id__put
+      parameters:
+      - in: path
+        name: policy_id
+        required: true
+        schema:
+          title: Policy Id
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PolicyUpdateRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyDBResponse'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Update Policy
+      tags:
+      - policy_engine
+  /policies/{policy_id}/resolved-guardrails:
+    get:
+      description: 'Get the resolved guardrails for a policy (including inherited guardrails).
+
+
+        This endpoint resolves the full inheritance chain and returns the final
+
+        set of guardrails that would be applied for this policy.
+
+
+        Example Request:
+
+        ```bash
+
+        curl -X GET "http://localhost:4000/policies/123e4567-e89b-12d3-a456-426614174000/resolved-guardrails" \
+
+        -H "Authorization: Bearer "
+
+        ```
+
+
+        Example Response:
+
+        ```json
+
+        {
+
+        "policy_id": "123e4567-e89b-12d3-a456-426614174000",
+
+        "policy_name": "healthcare-compliance",
+
+        "resolved_guardrails": ["pii_masking", "prompt_injection", "toxicity_filter"]
+
+        }
+
+        ```'
+      operationId: get_resolved_guardrails_policies__policy_id__resolved_guardrails_get
+      parameters:
+      - in: path
+        name: policy_id
+        required: true
+        schema:
+          title: Policy Id
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Get Resolved Guardrails
+      tags:
+      - policy_engine
+  /policies/{policy_id}/status:
+    put:
+      description: 'Update a policy version''s status. Valid transitions:
+
+        - draft -> published
+
+        - published -> production (demotes current production to published)
+
+        - production -> published (demotes, policy becomes inactive)'
+      operationId: update_policy_version_status_policies__policy_id__status_put
+      parameters:
+      - in: path
+        name: policy_id
+        required: true
+        schema:
+          title: Policy Id
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PolicyVersionStatusUpdateRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyDBResponse'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Update Policy Version Status
+      tags:
+      - policy_engine
+components:
+  schemas:
+    PolicyVersionCompareResponse:
+      description: Response for comparing two policy versions.
+      properties:
+        field_diffs:
+          additionalProperties:
+            additionalProperties: true
+            type: object
+          description: 'Field name -> {version_a: val, version_b: val} for differing fields.'
+          title: Field Diffs
+          type: object
+        version_a:
+          $ref: '#/components/schemas/PolicyDBResponse'
+          description: First version.
+        version_b:
+          $ref: '#/components/schemas/PolicyDBResponse'
+          description: Second version.
+      required:
+      - version_a
+      - version_b
+      title: PolicyVersionCompareResponse
+      type: object
+    PolicyListDBResponse:
+      description: Response for listing policies from the database.
+      properties:
+        policies:
+          description: List of policies.
+          items:
+            $ref: '#/components/schemas/PolicyDBResponse'
+          title: Policies
+          type: array
+        total_count:
+          default: 0
+          description: Total number of policies.
+          title: Total Count
+          type: integer
+      title: PolicyListDBResponse
+      type: object
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    PolicyMatchDetail:
+      description: Details about why a specific policy matched.
+      properties:
+        guardrails_added:
+          description: Guardrails this policy contributes.
+          items:
+            type: string
+          title: Guardrails Added
+          type: array
+        matched_via:
+          description: How the policy was matched (e.g., 'tag:healthcare', 'team:health-team', 'scope:*').
+          title: Matched Via
+          type: string
+        policy_name:
+          description: Name of the matched policy.
+          title: Policy Name
+          type: string
+      required:
+      - policy_name
+      - matched_via
+      title: PolicyMatchDetail
+      type: object
+    PolicyAttachmentDBResponse:
+      description: Response for a policy attachment from the database.
+      properties:
+        attachment_id:
+          description: Unique ID of the attachment.
+          title: Attachment Id
+          type: string
+        created_at:
+          anyOf:
+          - format: date-time
+            type: string
+          - type: 'null'
+          description: When the attachment was created.
+          title: Created At
+        created_by:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Who created the attachment.
+          title: Created By
+        keys:
+          description: Key patterns.
+          items:
+            type: string
+          title: Keys
+          type: array
+        models:
+          description: Model patterns.
+          items:
+            type: string
+          title: Models
+          type: array
+        policy_name:
+          description: Name of the attached policy.
+          title: Policy Name
+          type: string
+        scope:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Scope of the attachment.
+          title: Scope
+        tags:
+          description: Tag patterns.
+          items:
+            type: string
+          title: Tags
+          type: array
+        teams:
+          description: Team patterns.
+          items:
+            type: string
+          title: Teams
+          type: array
+        updated_at:
+          anyOf:
+          - format: date-time
+            type: string
+          - type: 'null'
+          description: When the attachment was last updated.
+          title: Updated At
+        updated_by:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Who last updated the attachment.
+          title: Updated By
+      required:
+      - attachment_id
+      - policy_name
+      title: PolicyAttachmentDBResponse
+      type: object
+    PolicyVersionListResponse:
+      description: Response for listing all versions of a policy.
+      properties:
+        policy_name:
+          description: Name of the policy.
+          title: Policy Name
+          type: string
+        total_count:
+          default: 0
+          description: Total number of versions.
+          title: Total Count
+          type: integer
+        versions:
+          description: All versions ordered by version_number desc.
+          items:
+            $ref: '#/components/schemas/PolicyDBResponse'
+          title: Versions
+          type: array
+      required:
+      - policy_name
+      title: PolicyVersionListResponse
+      type: object
+    PolicyAttachmentListResponse:
+      description: Response for listing policy attachments.
+      properties:
+        attachments:
+          description: List of policy attachments.
+          items:
+            $ref: '#/components/schemas/PolicyAttachmentDBResponse'
+          title: Attachments
+          type: array
+        total_count:
+          default: 0
+          description: Total number of attachments.
+          title: Total Count
+          type: integer
+      title: PolicyAttachmentListResponse
+      type: object
+    PipelineTestRequest:
+      description: Request body for testing a guardrail pipeline with sample messages.
+      properties:
+        pipeline:
+          additionalProperties: true
+          description: Pipeline definition with 'mode' and 'steps'.
+          title: Pipeline
+          type: object
+        test_messages:
+          description: 'Test messages to run through the pipeline, e.g. [{''role'': ''user'', ''content'': ''...''}].'
+          items:
+            additionalProperties:
+              type: string
+            type: object
+          title: Test Messages
+          type: array
+      required:
+      - pipeline
+      - test_messages
+      title: PipelineTestRequest
+      type: object
+    PolicyUpdateRequest:
+      description: Request body for updating a policy.
+      properties:
+        condition:
+          anyOf:
+          - $ref: '#/components/schemas/PolicyConditionRequest'
+          - type: 'null'
+          description: Condition for when this policy applies.
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Human-readable description of the policy.
+          title: Description
+        guardrails_add:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          description: List of guardrail names to add.
+          title: Guardrails Add
+        guardrails_remove:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          description: List of guardrail names to remove (from inherited).
+          title: Guardrails Remove
+        inherit:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Name of parent policy to inherit from.
+          title: Inherit
+        pipeline:
+          anyOf:
+          - additionalProperties: true
+            type: object
+          - type: 'null'
+          description: Optional guardrail pipeline for ordered execution. Contains 'mode' and 'steps'.
+          title: Pipeline
+        policy_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: New name for the policy.
+          title: Policy Name
+      title: PolicyUpdateRequest
+      type: object
+    PolicyResolveResponse:
+      description: Response for resolving effective policies/guardrails for a context.
+      properties:
+        effective_guardrails:
+          description: Final list of guardrails that would be applied.
+          items:
+            type: string
+          title: Effective Guardrails
+          type: array
+        matched_policies:
+          description: Details about each matched policy and why it matched.
+          items:
+            $ref: '#/components/schemas/PolicyMatchDetail'
+          title: Matched Policies
+          type: array
+      title: PolicyResolveResponse
+      type: object
+    PolicyVersionCreateRequest:
+      description: Request body for creating a new policy version (draft).
+      properties:
+        source_policy_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Policy ID to clone from. If None, clone from current production version.
+          title: Source Policy Id
+      title: PolicyVersionCreateRequest
+      type: object
+    PolicyResolveRequest:
+      description: Request body for resolving effective policies/guardrails for a context.
+      properties:
+        key_alias:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Key alias to resolve for.
+          title: Key Alias
+        model:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Model name to resolve for.
+          title: Model
+        tags:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          description: Tags to resolve for.
+          title: Tags
+        team_alias:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Team alias to resolve for.
+          title: Team Alias
+      title: PolicyResolveRequest
+      type: object
+    PolicyConditionRequest:
+      description: Condition for when a policy applies.
+      properties:
+        model:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Model name pattern (exact match or regex) for when policy applies.
+          title: Model
+      title: PolicyConditionRequest
+      type: object
+    PolicyAttachmentCreateRequest:
+      description: Request body for creating a policy attachment.
+      properties:
+        keys:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          description: Key aliases or patterns this attachment applies to.
+          title: Keys
+        models:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          description: Model names or patterns this attachment applies to.
+          title: Models
+        policy_name:
+          description: Name of the policy to attach.
+          title: Policy Name
+          type: string
+        scope:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Use '*' for global scope (applies to all requests).
+          title: Scope
+        tags:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          description: Tag patterns this attachment applies to. Supports wildcards (e.g., health-*).
+          title: Tags
+        teams:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          description: Team aliases or patterns this attachment applies to.
+          title: Teams
+      required:
+      - policy_name
+      title: PolicyAttachmentCreateRequest
+      type: object
+    PolicyDBResponse:
+      description: Response for a policy from the database.
+      properties:
+        condition:
+          anyOf:
+          - additionalProperties: true
+            type: object
+          - type: 'null'
+          description: Policy condition.
+          title: Condition
+        created_at:
+          anyOf:
+          - format: date-time
+            type: string
+          - type: 'null'
+          description: When the policy was created.
+          title: Created At
+        created_by:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Who created the policy.
+          title: Created By
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Policy description.
+          title: Description
+        guardrails_add:
+          description: Guardrails to add.
+          items:
+            type: string
+          title: Guardrails Add
+          type: array
+        guardrails_remove:
+          description: Guardrails to remove.
+          items:
+            type: string
+          title: Guardrails Remove
+          type: array
+        inherit:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Parent policy name.
+          title: Inherit
+        is_latest:
+          default: true
+          description: True if this is the latest version by version_number.
+          title: Is Latest
+          type: boolean
+        parent_version_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Policy ID this version was cloned from.
+          title: Parent Version Id
+        pipeline:
+          anyOf:
+          - additionalProperties: true
+            type: object
+          - type: 'null'
+          description: Optional guardrail pipeline.
+          title: Pipeline
+        policy_id:
+          description: Unique ID of the policy.
+          title: Policy Id
+          type: string
+        policy_name:
+          description: Name of the policy.
+          title: Policy Name
+          type: string
+        production_at:
+          anyOf:
+          - format: date-time
+            type: string
+          - type: 'null'
+          description: When this version was promoted to production.
+          title: Production At
+        published_at:
+          anyOf:
+          - format: date-time
+            type: string
+          - type: 'null'
+          description: When this version was published.
+          title: Published At
+        updated_at:
+          anyOf:
+          - format: date-time
+            type: string
+          - type: 'null'
+          description: When the policy was last updated.
+          title: Updated At
+        updated_by:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Who last updated the policy.
+          title: Updated By
+        version_number:
+          default: 1
+          description: Version number of this policy.
+          title: Version Number
+          type: integer
+        version_status:
+          default: production
+          description: 'One of: draft, published, production.'
+          title: Version Status
+          type: string
+      required:
+      - policy_id
+      - policy_name
+      title: PolicyDBResponse
+      type: object
+    PolicyCreateRequest:
+      description: Request body for creating a new policy.
+      properties:
+        condition:
+          anyOf:
+          - $ref: '#/components/schemas/PolicyConditionRequest'
+          - type: 'null'
+          description: Condition for when this policy applies.
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Human-readable description of the policy.
+          title: Description
+        guardrails_add:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          description: List of guardrail names to add.
+          title: Guardrails Add
+        guardrails_remove:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          description: List of guardrail names to remove (from inherited).
+          title: Guardrails Remove
+        inherit:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Name of parent policy to inherit from.
+          title: Inherit
+        pipeline:
+          anyOf:
+          - additionalProperties: true
+            type: object
+          - type: 'null'
+          description: Optional guardrail pipeline for ordered execution. Contains 'mode' and 'steps'.
+          title: Pipeline
+        policy_name:
+          description: Unique name for the policy.
+          title: Policy Name
+          type: string
+      required:
+      - policy_name
+      title: PolicyCreateRequest
+      type: object
+    AttachmentImpactResponse:
+      description: Response for estimating the impact of a policy attachment.
+      properties:
+        affected_keys_count:
+          default: 0
+          description: Number of keys that would be affected (named + unnamed).
+          title: Affected Keys Count
+          type: integer
+        affected_teams_count:
+          default: 0
+          description: Number of teams that would be affected (named + unnamed).
+          title: Affected Teams Count
+          type: integer
+        sample_keys:
+          description: Sample of affected key aliases (up to 10).
+          items:
+            type: string
+          title: Sample Keys
+          type: array
+        sample_teams:
+          description: Sample of affected team aliases (up to 10).
+          items:
+            type: string
+          title: Sample Teams
+          type: array
+        unnamed_keys_count:
+          default: 0
+          description: Number of affected keys without an alias.
+          title: Unnamed Keys Count
+          type: integer
+        unnamed_teams_count:
+          default: 0
+          description: Number of affected teams without an alias.
+          title: Unnamed Teams Count
+          type: integer
+      title: AttachmentImpactResponse
+      type: object
+    PolicyVersionStatusUpdateRequest:
+      description: Request body for updating a policy version's status.
+      properties:
+        version_status:
+          description: 'New status: ''published'' or ''production''.'
+          title: Version Status
+          type: string
+      required:
+      - version_status
+      title: PolicyVersionStatusUpdateRequest
+      type: object
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      description: Bearer token
+      in: header
+      name: x-litellm-api-key

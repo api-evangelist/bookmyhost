@@ -1,0 +1,1035 @@
+openapi: 3.2.0
+info:
+  title: LiteLLM MCP API
+  description: 'Proxy Server to call 100+ LLMs in the OpenAI format. **Customize Swagger Docs**
+
+
+    👉 ```LiteLLM Admin Panel on /ui```. Create, Edit Keys with SSO. Having issues? Try ```Fallback Login```
+
+
+    💸 ```LiteLLM Model Cost Map```.
+
+
+    🔎 ```LiteLLM Model Hub```. See available models on the proxy. **Docs**'
+  version: 1.93.0
+tags:
+- name: MCP
+paths:
+  /{mcp_server_name}/mcp:
+    options:
+      summary: Dynamic Mcp Route
+      description: 'Handle /{name}/mcp for MCP server aliases, toolsets, MCP access group tags, and comma-separated lists.
+
+
+        Resolution order:
+
+        1. Registered MCP server alias / name
+
+        2. Comma-separated list (short-circuits before any DB call)
+
+        3. Toolset name (DB lookup, cached)
+
+        4. MCP access group tag (DB lookup, cached)'
+      operationId: dynamic_mcp_route__mcp_server_name__mcp_options
+      parameters:
+      - name: mcp_server_name
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - MCP
+    post:
+      summary: Dynamic Mcp Route
+      description: 'Handle /{name}/mcp for MCP server aliases, toolsets, MCP access group tags, and comma-separated lists.
+
+
+        Resolution order:
+
+        1. Registered MCP server alias / name
+
+        2. Comma-separated list (short-circuits before any DB call)
+
+        3. Toolset name (DB lookup, cached)
+
+        4. MCP access group tag (DB lookup, cached)'
+      operationId: dynamic_mcp_route__mcp_server_name__mcp_post
+      parameters:
+      - name: mcp_server_name
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - MCP
+    delete:
+      summary: Dynamic Mcp Route
+      description: 'Handle /{name}/mcp for MCP server aliases, toolsets, MCP access group tags, and comma-separated lists.
+
+
+        Resolution order:
+
+        1. Registered MCP server alias / name
+
+        2. Comma-separated list (short-circuits before any DB call)
+
+        3. Toolset name (DB lookup, cached)
+
+        4. MCP access group tag (DB lookup, cached)'
+      operationId: dynamic_mcp_route__mcp_server_name__mcp_delete
+      parameters:
+      - name: mcp_server_name
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - MCP
+    get:
+      summary: Dynamic Mcp Route
+      description: 'Handle /{name}/mcp for MCP server aliases, toolsets, MCP access group tags, and comma-separated lists.
+
+
+        Resolution order:
+
+        1. Registered MCP server alias / name
+
+        2. Comma-separated list (short-circuits before any DB call)
+
+        3. Toolset name (DB lookup, cached)
+
+        4. MCP access group tag (DB lookup, cached)'
+      operationId: dynamic_mcp_route__mcp_server_name__mcp_get
+      parameters:
+      - name: mcp_server_name
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - MCP
+    put:
+      summary: Dynamic Mcp Route
+      description: 'Handle /{name}/mcp for MCP server aliases, toolsets, MCP access group tags, and comma-separated lists.
+
+
+        Resolution order:
+
+        1. Registered MCP server alias / name
+
+        2. Comma-separated list (short-circuits before any DB call)
+
+        3. Toolset name (DB lookup, cached)
+
+        4. MCP access group tag (DB lookup, cached)'
+      operationId: dynamic_mcp_route__mcp_server_name__mcp_put
+      parameters:
+      - name: mcp_server_name
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - MCP
+    head:
+      summary: Dynamic Mcp Route
+      description: 'Handle /{name}/mcp for MCP server aliases, toolsets, MCP access group tags, and comma-separated lists.
+
+
+        Resolution order:
+
+        1. Registered MCP server alias / name
+
+        2. Comma-separated list (short-circuits before any DB call)
+
+        3. Toolset name (DB lookup, cached)
+
+        4. MCP access group tag (DB lookup, cached)'
+      operationId: dynamic_mcp_route__mcp_server_name__mcp_head
+      parameters:
+      - name: mcp_server_name
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - MCP
+    patch:
+      summary: Dynamic Mcp Route
+      description: 'Handle /{name}/mcp for MCP server aliases, toolsets, MCP access group tags, and comma-separated lists.
+
+
+        Resolution order:
+
+        1. Registered MCP server alias / name
+
+        2. Comma-separated list (short-circuits before any DB call)
+
+        3. Toolset name (DB lookup, cached)
+
+        4. MCP access group tag (DB lookup, cached)'
+      operationId: dynamic_mcp_route__mcp_server_name__mcp_patch
+      parameters:
+      - name: mcp_server_name
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - MCP
+  /authorize:
+    get:
+      tags:
+      - MCP
+      summary: Authorize
+      operationId: authorize_authorize_get
+      parameters:
+      - name: redirect_uri
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Redirect Uri
+      - name: client_id
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Client Id
+      - name: state
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: State
+      - name: mcp_server_name
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Mcp Server Name
+      - name: code_challenge
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Code Challenge
+      - name: code_challenge_method
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Code Challenge Method
+      - name: response_type
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Response Type
+      - name: scope
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Scope
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /{mcp_server_name}/authorize:
+    get:
+      tags:
+      - MCP
+      summary: Authorize
+      operationId: authorize__mcp_server_name__authorize_get
+      parameters:
+      - name: mcp_server_name
+        in: path
+        required: true
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Mcp Server Name
+      - name: redirect_uri
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Redirect Uri
+      - name: client_id
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Client Id
+      - name: state
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: State
+      - name: code_challenge
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Code Challenge
+      - name: code_challenge_method
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Code Challenge Method
+      - name: response_type
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Response Type
+      - name: scope
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Scope
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /token:
+    post:
+      tags:
+      - MCP
+      summary: Token Endpoint
+      description: 'Accept the authorization code from client and exchange it for OAuth token.
+
+        Supports PKCE flow by forwarding code_verifier to upstream provider.
+
+
+        1. Call the token endpoint with PKCE parameters
+
+        2. Store the user''s token in the db - and generate a LiteLLM virtual key
+
+        3. Return the token
+
+        4. Return a virtual key in this response'
+      operationId: token_endpoint_token_post
+      parameters:
+      - name: mcp_server_name
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Mcp Server Name
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Body_token_endpoint_token_post'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /{mcp_server_name}/token:
+    post:
+      tags:
+      - MCP
+      summary: Token Endpoint
+      description: 'Accept the authorization code from client and exchange it for OAuth token.
+
+        Supports PKCE flow by forwarding code_verifier to upstream provider.
+
+
+        1. Call the token endpoint with PKCE parameters
+
+        2. Store the user''s token in the db - and generate a LiteLLM virtual key
+
+        3. Return the token
+
+        4. Return a virtual key in this response'
+      operationId: token_endpoint__mcp_server_name__token_post
+      parameters:
+      - name: mcp_server_name
+        in: path
+        required: true
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Mcp Server Name
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Body_token_endpoint__mcp_server_name__token_post'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /callback:
+    get:
+      tags:
+      - MCP
+      summary: Callback
+      description: 'OAuth 2.0 authorization response handler for MCP loopback clients.
+
+
+        Accepts either:
+
+
+        - A successful authorization response (``code`` + ``state``), which is
+
+        forwarded back to the validated client ``redirect_uri`` with the
+
+        original (un-wrapped) ``state``.
+
+        - An error response (``error``[+``error_description``/``error_uri``]), per
+
+        RFC 6749 §4.1.2.1. When ``state`` is present and decodes to a trusted
+
+        ``redirect_uri``, the error params are propagated back to the client so
+
+        its OAuth library can surface them. Otherwise we render an HTML error
+
+        page so the user is not left on an opaque 422 / blank screen.'
+      operationId: callback_callback_get
+      parameters:
+      - name: code
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Code
+      - name: state
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: State
+      - name: error
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error
+      - name: error_description
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error Description
+      - name: error_uri
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error Uri
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /.well-known/oauth-protected-resource/mcp/{mcp_server_name}:
+    get:
+      tags:
+      - MCP
+      summary: Oauth Protected Resource Mcp Standard
+      description: 'OAuth protected resource discovery endpoint using standard MCP URL pattern.
+
+
+        Standard pattern: /mcp/{server_name}
+
+        Discovery path: /.well-known/oauth-protected-resource/mcp/{server_name}
+
+
+        This endpoint is compliant with MCP specification and works with standard
+
+        MCP clients like mcp-inspector and VSCode Copilot.'
+      operationId: oauth_protected_resource_mcp_standard__well_known_oauth_protected_resource_mcp__mcp_server_name__get
+      parameters:
+      - name: mcp_server_name
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /.well-known/oauth-protected-resource:
+    get:
+      tags:
+      - MCP
+      summary: Oauth Protected Resource Mcp
+      description: 'OAuth protected resource discovery endpoint using LiteLLM legacy URL pattern.
+
+
+        Legacy pattern: /{server_name}/mcp
+
+        Discovery path: /.well-known/oauth-protected-resource/{server_name}/mcp
+
+
+        This endpoint is kept for backward compatibility. New integrations should
+
+        use the standard MCP pattern (/mcp/{server_name}) instead.'
+      operationId: oauth_protected_resource_mcp__well_known_oauth_protected_resource_get
+      parameters:
+      - name: mcp_server_name
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /.well-known/oauth-protected-resource/{mcp_server_name}/mcp:
+    get:
+      tags:
+      - MCP
+      summary: Oauth Protected Resource Mcp
+      description: 'OAuth protected resource discovery endpoint using LiteLLM legacy URL pattern.
+
+
+        Legacy pattern: /{server_name}/mcp
+
+        Discovery path: /.well-known/oauth-protected-resource/{server_name}/mcp
+
+
+        This endpoint is kept for backward compatibility. New integrations should
+
+        use the standard MCP pattern (/mcp/{server_name}) instead.'
+      operationId: oauth_protected_resource_mcp__well_known_oauth_protected_resource__mcp_server_name__mcp_get
+      parameters:
+      - name: mcp_server_name
+        in: path
+        required: true
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /.well-known/oauth-authorization-server/mcp/{mcp_server_name}:
+    get:
+      tags:
+      - MCP
+      summary: Oauth Authorization Server Mcp Standard
+      description: 'OAuth authorization server discovery endpoint using standard MCP URL pattern.
+
+
+        Standard pattern: /mcp/{server_name}
+
+        Discovery path: /.well-known/oauth-authorization-server/mcp/{server_name}'
+      operationId: oauth_authorization_server_mcp_standard__well_known_oauth_authorization_server_mcp__mcp_server_name__get
+      parameters:
+      - name: mcp_server_name
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /.well-known/oauth-authorization-server:
+    get:
+      tags:
+      - MCP
+      summary: Oauth Authorization Server Mcp
+      description: 'OAuth authorization server discovery endpoint.
+
+
+        Supports both legacy pattern (/{server_name}) and root endpoint.'
+      operationId: oauth_authorization_server_mcp__well_known_oauth_authorization_server_get
+      parameters:
+      - name: mcp_server_name
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /.well-known/oauth-authorization-server/{mcp_server_name}:
+    get:
+      tags:
+      - MCP
+      summary: Oauth Authorization Server Mcp
+      description: 'OAuth authorization server discovery endpoint.
+
+
+        Supports both legacy pattern (/{server_name}) and root endpoint.'
+      operationId: oauth_authorization_server_mcp__well_known_oauth_authorization_server__mcp_server_name__get
+      parameters:
+      - name: mcp_server_name
+        in: path
+        required: true
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /.well-known/openid-configuration:
+    get:
+      tags:
+      - MCP
+      summary: Openid Configuration
+      operationId: openid_configuration__well_known_openid_configuration_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /.well-known/jwks.json:
+    get:
+      tags:
+      - MCP
+      summary: Jwks Json
+      description: 'JSON Web Key Set endpoint.
+
+
+        Returns the RSA public key used by MCPJWTSigner to sign outbound MCP tokens.
+
+        MCP servers and gateways use this endpoint to verify liteLLM-issued JWTs.
+
+
+        Returns an empty key set if MCPJWTSigner is not configured.'
+      operationId: jwks_json__well_known_jwks_json_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /.well-known/oauth-authorization-server/{mcp_server_name}/mcp:
+    get:
+      tags:
+      - MCP
+      summary: Oauth Authorization Server Legacy
+      description: OAuth authorization server discovery for legacy /{server_name}/mcp pattern.
+      operationId: oauth_authorization_server_legacy__well_known_oauth_authorization_server__mcp_server_name__mcp_get
+      parameters:
+      - name: mcp_server_name
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /register:
+    post:
+      tags:
+      - MCP
+      summary: Register Client
+      operationId: register_client_register_post
+      parameters:
+      - name: mcp_server_name
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /{mcp_server_name}/register:
+    post:
+      tags:
+      - MCP
+      summary: Register Client
+      operationId: register_client__mcp_server_name__register_post
+      parameters:
+      - name: mcp_server_name
+        in: path
+        required: true
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Mcp Server Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    Body_token_endpoint_token_post:
+      properties:
+        grant_type:
+          type: string
+          title: Grant Type
+        code:
+          type: string
+          title: Code
+        redirect_uri:
+          type: string
+          title: Redirect Uri
+        client_id:
+          type: string
+          title: Client Id
+        client_secret:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Client Secret
+        code_verifier:
+          type: string
+          title: Code Verifier
+        refresh_token:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Refresh Token
+        scope:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Scope
+      type: object
+      required:
+      - grant_type
+      - client_id
+      title: Body_token_endpoint_token_post
+    Body_token_endpoint__mcp_server_name__token_post:
+      properties:
+        grant_type:
+          type: string
+          title: Grant Type
+        code:
+          type: string
+          title: Code
+        redirect_uri:
+          type: string
+          title: Redirect Uri
+        client_id:
+          type: string
+          title: Client Id
+        client_secret:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Client Secret
+        code_verifier:
+          type: string
+          title: Code Verifier
+        refresh_token:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Refresh Token
+        scope:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Scope
+      type: object
+      required:
+      - grant_type
+      - client_id
+      title: Body_token_endpoint__mcp_server_name__token_post
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      description: Bearer token
+      in: header
+      name: x-litellm-api-key

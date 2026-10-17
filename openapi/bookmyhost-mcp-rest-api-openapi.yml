@@ -1,0 +1,453 @@
+openapi: 3.2.0
+info:
+  title: LiteLLM MCP Rest API
+  description: 'Proxy Server to call 100+ LLMs in the OpenAI format. **Customize Swagger Docs**
+
+
+    👉 ```LiteLLM Admin Panel on /ui```. Create, Edit Keys with SSO. Having issues? Try ```Fallback Login```
+
+
+    💸 ```LiteLLM Model Cost Map```.
+
+
+    🔎 ```LiteLLM Model Hub```. See available models on the proxy. **Docs**'
+  version: 1.93.0
+tags:
+- name: mcp_rest
+paths:
+  /mcp-rest/test/connection:
+    post:
+      description: Test if we can connect to the provided MCP server before adding it
+      operationId: test_connection_mcp_rest_test_connection_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewMCPServerRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Test Connection
+      tags:
+      - mcp_rest
+  /mcp-rest/test/tools/list:
+    post:
+      description: Preview tools available from MCP server before adding it
+      operationId: test_tools_list_mcp_rest_test_tools_list_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewMCPServerRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Test Tools List
+      tags:
+      - mcp_rest
+  /mcp-rest/tools/call:
+    post:
+      description: REST API to call a specific MCP tool with the provided arguments
+      operationId: call_tool_rest_api_mcp_rest_tools_call_post
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+      security:
+      - APIKeyHeader: []
+      summary: Call Tool Rest Api
+      tags:
+      - mcp_rest
+  /mcp-rest/tools/list:
+    get:
+      description: 'List all available tools with information about the server they belong to.
+
+
+        Example response:
+
+        {
+
+        "tools": [
+
+        {
+
+        "name": "create_zap",
+
+        "description": "Create a new zap",
+
+        "inputSchema": "tool_input_schema",
+
+        "mcp_info": {
+
+        "server_name": "zapier",
+
+        "logo_url": "https://www.zapier.com/logo.png",
+
+        }
+
+        }
+
+        ],
+
+        "error": null,
+
+        "message": "Successfully retrieved tools"
+
+        }'
+      operationId: list_tool_rest_api_mcp_rest_tools_list_get
+      parameters:
+      - description: The server id to list tools for
+        in: query
+        name: server_id
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: The server id to list tools for
+          title: Server Id
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                title: Response List Tool Rest Api Mcp Rest Tools List Get
+                type: object
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: List Tool Rest Api
+      tags:
+      - mcp_rest
+components:
+  schemas:
+    NewMCPServerRequest:
+      properties:
+        alias:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Alias
+        allow_all_keys:
+          default: false
+          title: Allow All Keys
+          type: boolean
+        allowed_tools:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          title: Allowed Tools
+        approval_status:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: 'Server-managed: set by the endpoint; caller values are overridden.'
+          title: Approval Status
+        args:
+          items:
+            type: string
+          title: Args
+          type: array
+        auth_type:
+          anyOf:
+          - enum:
+            - none
+            - api_key
+            - bearer_token
+            - basic
+            - authorization
+            - oauth2
+            - aws_sigv4
+            - token
+            type: string
+          - type: 'null'
+          title: Auth Type
+        authorization_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Authorization Url
+        available_on_public_internet:
+          default: true
+          title: Available On Public Internet
+          type: boolean
+        byok_api_key_help_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Byok Api Key Help Url
+        byok_description:
+          items:
+            type: string
+          title: Byok Description
+          type: array
+        command:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Command
+        credentials:
+          anyOf:
+          - $ref: '#/components/schemas/MCPCredentials'
+          - type: 'null'
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        env:
+          additionalProperties:
+            type: string
+          title: Env
+          type: object
+        extra_headers:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          title: Extra Headers
+        instructions:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Instructions
+        is_byok:
+          default: false
+          title: Is Byok
+          type: boolean
+        mcp_access_groups:
+          items:
+            type: string
+          title: Mcp Access Groups
+          type: array
+        mcp_info:
+          anyOf:
+          - additionalProperties: true
+            type: object
+          - type: 'null'
+          title: Mcp Info
+        oauth2_flow:
+          anyOf:
+          - enum:
+            - client_credentials
+            - authorization_code
+            type: string
+          - type: 'null'
+          title: Oauth2 Flow
+        registration_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Registration Url
+        server_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Server Id
+        server_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Server Name
+        source_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Source Url
+        spec_path:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Spec Path
+        static_headers:
+          anyOf:
+          - additionalProperties:
+              type: string
+            type: object
+          - type: 'null'
+          title: Static Headers
+        submitted_at:
+          anyOf:
+          - format: date-time
+            type: string
+          - type: 'null'
+          description: 'Server-managed: set by the endpoint; caller values are overridden.'
+          title: Submitted At
+        submitted_by:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: 'Server-managed: set by the endpoint; caller values are overridden.'
+          title: Submitted By
+        token_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Token Url
+        tool_name_to_description:
+          anyOf:
+          - additionalProperties:
+              type: string
+            type: object
+          - type: 'null'
+          title: Tool Name To Description
+        tool_name_to_display_name:
+          anyOf:
+          - additionalProperties:
+              type: string
+            type: object
+          - type: 'null'
+          title: Tool Name To Display Name
+        transport:
+          default: sse
+          enum:
+          - sse
+          - http
+          - stdio
+          title: Transport
+          type: string
+        url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Url
+      title: NewMCPServerRequest
+      type: object
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    MCPCredentials:
+      properties:
+        auth_value:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Auth Value
+        aws_access_key_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Aws Access Key Id
+        aws_region_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Aws Region Name
+        aws_role_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Aws Role Name
+        aws_secret_access_key:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Aws Secret Access Key
+        aws_service_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Aws Service Name
+        aws_session_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Aws Session Name
+        aws_session_token:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Aws Session Token
+        client_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Client Id
+        client_secret:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Client Secret
+        scopes:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          title: Scopes
+      title: MCPCredentials
+      type: object
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      description: Bearer token
+      in: header
+      name: x-litellm-api-key

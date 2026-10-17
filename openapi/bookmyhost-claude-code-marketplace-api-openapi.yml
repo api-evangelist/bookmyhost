@@ -1,0 +1,559 @@
+openapi: 3.2.0
+info:
+  title: LiteLLM Claude Code Marketplace API
+  description: 'Proxy Server to call 100+ LLMs in the OpenAI format. **Customize Swagger Docs**
+
+
+    👉 ```LiteLLM Admin Panel on /ui```. Create, Edit Keys with SSO. Having issues? Try ```Fallback Login```
+
+
+    💸 ```LiteLLM Model Cost Map```.
+
+
+    🔎 ```LiteLLM Model Hub```. See available models on the proxy. **Docs**'
+  version: 1.93.0
+tags:
+- name: Claude Code Marketplace
+paths:
+  /public/skill_hub:
+    get:
+      tags:
+      - Claude Code Marketplace
+      summary: Public Skill Hub
+      description: Return enabled (public) Claude Code skills — no auth required.
+      operationId: public_skill_hub_public_skill_hub_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /claude-code/marketplace.json:
+    get:
+      description: 'Serve marketplace.json for Claude Code plugin discovery.
+
+
+        This endpoint is accessed by Claude Code CLI when users run:
+
+        - claude plugin marketplace add
+
+        - claude plugin install @
+
+
+        Returns:
+
+        Marketplace catalog with list of available plugins and their git sources.
+
+
+        Example:
+
+        ```bash
+
+        claude plugin marketplace add http://localhost:4000/claude-code/marketplace.json
+
+        claude plugin install my-plugin@litellm
+
+        ```'
+      operationId: get_marketplace_claude_code_marketplace_json_get
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+      summary: Get Marketplace
+      tags:
+      - Claude Code Marketplace
+  /claude-code/plugins:
+    get:
+      description: 'List all plugins in the marketplace.
+
+
+        Parameters:
+
+        - enabled_only: If true, only return enabled plugins
+
+
+        Returns:
+
+        List of plugins with their metadata.'
+      operationId: list_plugins_claude_code_plugins_get
+      parameters:
+      - in: query
+        name: enabled_only
+        required: false
+        schema:
+          default: false
+          title: Enabled Only
+          type: boolean
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListPluginsResponse'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: List Plugins
+      tags:
+      - Claude Code Marketplace
+    post:
+      description: 'Register a plugin in the LiteLLM marketplace.
+
+
+        LiteLLM acts as a registry/discovery layer. Plugins are hosted on
+
+        GitHub/GitLab/Bitbucket. Claude Code will clone from the git source
+
+        when users install.
+
+
+        Parameters:
+
+        - name: Plugin name (kebab-case)
+
+        - source: Git source reference (github, url, or git-subdir format)
+
+        - version: Semantic version (optional)
+
+        - description: Plugin description (optional)
+
+        - author: Author information (optional)
+
+        - homepage: Plugin homepage URL (optional)
+
+        - keywords: Search keywords (optional)
+
+        - category: Plugin category (optional)
+
+
+        Returns:
+
+        Registration status and plugin information.
+
+
+        Example:
+
+        ```bash
+
+        curl -X POST http://localhost:4000/claude-code/plugins \
+
+        -H "Authorization: Bearer sk-..." \
+
+        -H "Content-Type: application/json" \
+
+        -d ''{
+
+        "name": "my-plugin",
+
+        "source": {"source": "github", "repo": "org/my-plugin"},
+
+        "version": "1.0.0",
+
+        "description": "My awesome plugin"
+
+        }''
+
+        ```'
+      operationId: register_plugin_claude_code_plugins_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterPluginRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Register Plugin
+      tags:
+      - Claude Code Marketplace
+  /claude-code/plugins/{plugin_name}:
+    delete:
+      description: 'Delete a plugin from the marketplace.
+
+
+        Parameters:
+
+        - plugin_name: The name of the plugin to delete'
+      operationId: delete_plugin_claude_code_plugins__plugin_name__delete
+      parameters:
+      - in: path
+        name: plugin_name
+        required: true
+        schema:
+          title: Plugin Name
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Delete Plugin
+      tags:
+      - Claude Code Marketplace
+    get:
+      description: 'Get details of a specific plugin.
+
+
+        Parameters:
+
+        - plugin_name: The name of the plugin
+
+
+        Returns:
+
+        Plugin details including source and metadata.'
+      operationId: get_plugin_claude_code_plugins__plugin_name__get
+      parameters:
+      - in: path
+        name: plugin_name
+        required: true
+        schema:
+          title: Plugin Name
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Get Plugin
+      tags:
+      - Claude Code Marketplace
+  /claude-code/plugins/{plugin_name}/disable:
+    post:
+      description: 'Disable a plugin without deleting it.
+
+
+        Parameters:
+
+        - plugin_name: The name of the plugin to disable'
+      operationId: disable_plugin_claude_code_plugins__plugin_name__disable_post
+      parameters:
+      - in: path
+        name: plugin_name
+        required: true
+        schema:
+          title: Plugin Name
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Disable Plugin
+      tags:
+      - Claude Code Marketplace
+  /claude-code/plugins/{plugin_name}/enable:
+    post:
+      description: 'Enable a disabled plugin.
+
+
+        Parameters:
+
+        - plugin_name: The name of the plugin to enable'
+      operationId: enable_plugin_claude_code_plugins__plugin_name__enable_post
+      parameters:
+      - in: path
+        name: plugin_name
+        required: true
+        schema:
+          title: Plugin Name
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyHeader: []
+      summary: Enable Plugin
+      tags:
+      - Claude Code Marketplace
+components:
+  schemas:
+    RegisterPluginRequest:
+      description: 'Request body for registering a plugin in the marketplace.
+
+
+        LiteLLM acts as a registry/discovery layer. Plugins are hosted on
+
+        GitHub/GitLab/Bitbucket and referenced by their git source.'
+      properties:
+        author:
+          anyOf:
+          - $ref: '#/components/schemas/PluginAuthor'
+          - type: 'null'
+          description: Plugin author
+        category:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Plugin category
+          title: Category
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Plugin description
+          title: Description
+        domain:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Skill domain (e.g., 'Productivity')
+          title: Domain
+        homepage:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Plugin homepage URL
+          title: Homepage
+        keywords:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          description: Search keywords
+          title: Keywords
+        name:
+          description: Plugin name (kebab-case, e.g., 'my-plugin')
+          pattern: ^[a-z0-9-]+$
+          title: Name
+          type: string
+        namespace:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Skill namespace within domain (e.g., 'workflows')
+          title: Namespace
+        source:
+          additionalProperties:
+            type: string
+          description: 'Git source reference. Supported formats:
+
+            - GitHub: {''source'': ''github'', ''repo'': ''org/repo''}
+
+            - Git URL: {''source'': ''url'', ''url'': ''https://github.com/org/repo.git''}
+
+            - Git Subdir: {''source'': ''git-subdir'', ''url'': ''https://github.com/org/repo.git'', ''path'': ''plugins/plugin-name''}'
+          title: Source
+          type: object
+        version:
+          anyOf:
+          - type: string
+          - type: 'null'
+          default: 1.0.0
+          description: Semantic version
+          title: Version
+      required:
+      - name
+      - source
+      title: RegisterPluginRequest
+      type: object
+    ListPluginsResponse:
+      description: Response from listing plugins.
+      properties:
+        count:
+          title: Count
+          type: integer
+        plugins:
+          items:
+            $ref: '#/components/schemas/PluginListItem'
+          title: Plugins
+          type: array
+      required:
+      - plugins
+      - count
+      title: ListPluginsResponse
+      type: object
+    PluginAuthor:
+      description: Plugin author information.
+      properties:
+        email:
+          anyOf:
+          - type: string
+          - type: 'null'
+          description: Author email
+          title: Email
+        name:
+          description: Author name
+          title: Name
+          type: string
+      required:
+      - name
+      title: PluginAuthor
+      type: object
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    PluginListItem:
+      description: Plugin item in list responses.
+      properties:
+        author:
+          anyOf:
+          - $ref: '#/components/schemas/PluginAuthor'
+          - type: 'null'
+        category:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Category
+        created_at:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Created At
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        domain:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Domain
+        enabled:
+          title: Enabled
+          type: boolean
+        homepage:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Homepage
+        id:
+          title: Id
+          type: string
+        keywords:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          title: Keywords
+        name:
+          title: Name
+          type: string
+        namespace:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Namespace
+        source:
+          additionalProperties:
+            type: string
+          title: Source
+          type: object
+        updated_at:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Updated At
+        version:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Version
+      required:
+      - id
+      - name
+      - version
+      - description
+      - source
+      - enabled
+      - created_at
+      - updated_at
+      title: PluginListItem
+      type: object
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      description: Bearer token
+      in: header
+      name: x-litellm-api-key

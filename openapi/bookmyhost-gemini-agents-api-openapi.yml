@@ -1,0 +1,34 @@
+openapi: 3.2.0
+info:
+  title: LiteLLM Gemini Agents API
+  description: 'Proxy Server to call 100+ LLMs in the OpenAI format. **Customize Swagger Docs**
+
+
+    👉 ```LiteLLM Admin Panel on /ui```. Create, Edit Keys with SSO. Having issues? Try ```Fallback Login```
+
+
+    💸 ```LiteLLM Model Cost Map```.
+
+
+    🔎 ```LiteLLM Model Hub```. See available models on the proxy. **Docs**'
+  version: 1.93.0
+tags:
+- name: gemini_agents
+paths:
+  /v1beta/agents:
+    get:
+      tags:
+      - gemini_agents
+      summary: gemini_agents
+      responses:
+        '200':
+          description: OK
+      operationId: getV1betaAgents
+      x-operation-id-source: derived
+components:
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      description: Bearer token
+      in: header
+      name: x-litellm-api-key

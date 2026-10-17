@@ -97,7 +97,1075 @@ apis:
   description: API for BookMyHost cloud services, as described in the developer portal.
   humanURL: https://my.bookmyhost.com/developer
   aid: bookmyhost:bookmyhost-api
-
+- aid: bookmyhost:bookmyhost-a2a-api
+  name: Blazing Bullet Private Limited A2a API
+  description: The a2a API from Blazing Bullet Private Limited — 5 operation(s) for a2a.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - a2a
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-a2a-api-openapi.yml
+- aid: bookmyhost:bookmyhost-a2a-registration-api
+  name: Blazing Bullet Private Limited A2a Registration API
+  description: >-
+    The a2a_registration API from Blazing Bullet Private Limited — 1 operation(s) for a2a_registration.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - a2a_registration
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-a2a-registration-api-openapi.yml
+- aid: bookmyhost:bookmyhost-access-groups-api
+  name: Blazing Bullet Private Limited Access Groups API
+  description: >-
+    The access_groups API from Blazing Bullet Private Limited — 4 operation(s) for access_groups.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - access_groups
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-access-groups-api-openapi.yml
+- aid: bookmyhost:bookmyhost-adaptive-router-api
+  name: Blazing Bullet Private Limited Adaptive Router API
+  description: >-
+    The adaptive_router API from Blazing Bullet Private Limited — 1 operation(s) for adaptive_router.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - adaptive_router
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-adaptive-router-api-openapi.yml
+- aid: bookmyhost:bookmyhost-agent-management-api
+  name: Blazing Bullet Private Limited Agent Management API
+  description: >-
+    The Agent Management API from Blazing Bullet Private Limited — 1 operation(s) for agent management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Agent Management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-agent-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-agents-api
+  name: Blazing Bullet Private Limited Agents API
+  description: The Agents API from Blazing Bullet Private Limited — 1 operation(s) for agents.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Agents
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-agents-api-openapi.yml
+- aid: bookmyhost:bookmyhost-anthropic-pass-through-api
+  name: Blazing Bullet Private Limited Anthropic Pass-through API
+  description: >-
+    The Anthropic Pass-through API from Blazing Bullet Private Limited — 1 operation(s) for anthropic
+    pass-through.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Anthropic Pass-through
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-anthropic-pass-through-api-openapi.yml
+- aid: bookmyhost:bookmyhost-anthropic-passthrough-api
+  name: Blazing Bullet Private Limited Anthropic Passthrough API
+  description: >-
+    The anthropic_passthrough API from Blazing Bullet Private Limited — 3 operation(s) for anthropic_passthrough.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - anthropic_passthrough
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-anthropic-passthrough-api-openapi.yml
+- aid: bookmyhost:bookmyhost-anthropic-skills-api
+  name: Blazing Bullet Private Limited Anthropic Skills API
+  description: >-
+    The anthropic_skills API from Blazing Bullet Private Limited — 2 operation(s) for anthropic_skills.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - anthropic_skills
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-anthropic-skills-api-openapi.yml
+- aid: bookmyhost:bookmyhost-assemblyai-eu-pass-through-api
+  name: Blazing Bullet Private Limited AssemblyAI EU Pass-through API
+  description: >-
+    The AssemblyAI EU Pass-through API from Blazing Bullet Private Limited — 1 operation(s) for assemblyai
+    eu pass-through.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - AssemblyAI EU Pass-through
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-assemblyai-eu-pass-through-api-openapi.yml
+- aid: bookmyhost:bookmyhost-assemblyai-pass-through-api
+  name: Blazing Bullet Private Limited AssemblyAI Pass-through API
+  description: >-
+    The AssemblyAI Pass-through API from Blazing Bullet Private Limited — 1 operation(s) for assemblyai
+    pass-through.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - AssemblyAI Pass-through
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-assemblyai-pass-through-api-openapi.yml
+- aid: bookmyhost:bookmyhost-assistants-api
+  name: Blazing Bullet Private Limited Assistants API
+  description: The assistants API from Blazing Bullet Private Limited — 12 operation(s) for assistants.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - assistants
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-assistants-api-openapi.yml
+- aid: bookmyhost:bookmyhost-audio-api
+  name: Blazing Bullet Private Limited Audio API
+  description: The audio API from Blazing Bullet Private Limited — 4 operation(s) for audio.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - audio
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-audio-api-openapi.yml
+- aid: bookmyhost:bookmyhost-audit-logging-api
+  name: Blazing Bullet Private Limited Audit Logging API
+  description: >-
+    The Audit Logging API from Blazing Bullet Private Limited — 2 operation(s) for audit logging.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Audit Logging
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-audit-logging-api-openapi.yml
+- aid: bookmyhost:bookmyhost-azure-ai-pass-through-api
+  name: Blazing Bullet Private Limited Azure AI Pass-through API
+  description: >-
+    The Azure AI Pass-through API from Blazing Bullet Private Limited — 1 operation(s) for azure ai pass-through.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Azure AI Pass-through
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-azure-ai-pass-through-api-openapi.yml
+- aid: bookmyhost:bookmyhost-azure-pass-through-api
+  name: Blazing Bullet Private Limited Azure Pass-through API
+  description: >-
+    The Azure Pass-through API from Blazing Bullet Private Limited — 1 operation(s) for azure pass-through.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Azure Pass-through
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-azure-pass-through-api-openapi.yml
+- aid: bookmyhost:bookmyhost-batch-api
+  name: Blazing Bullet Private Limited Batch API
+  description: The batch API from Blazing Bullet Private Limited — 9 operation(s) for batch.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - batch
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-batch-api-openapi.yml
+- aid: bookmyhost:bookmyhost-bedrock-pass-through-api
+  name: Blazing Bullet Private Limited Bedrock Pass-through API
+  description: >-
+    The Bedrock Pass-through API from Blazing Bullet Private Limited — 1 operation(s) for bedrock pass-through.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Bedrock Pass-through
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-bedrock-pass-through-api-openapi.yml
+- aid: bookmyhost:bookmyhost-beta-a2a-agents-api
+  name: Blazing Bullet Private Limited [beta] A2A Agents API
+  description: >-
+    The [beta] A2A Agents API from Blazing Bullet Private Limited — 4 operation(s) for [beta] a2a agents.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - '[beta] A2A Agents'
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-beta-a2a-agents-api-openapi.yml
+- aid: bookmyhost:bookmyhost-beta-agents-api
+  name: Blazing Bullet Private Limited [beta] Agents API
+  description: >-
+    The [beta] Agents API from Blazing Bullet Private Limited — 2 operation(s) for [beta] agents.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - '[beta] Agents'
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-beta-agents-api-openapi.yml
+- aid: bookmyhost:bookmyhost-beta-mcp-api
+  name: Blazing Bullet Private Limited [beta] MCP API
+  description: The [beta] MCP API from Blazing Bullet Private Limited — 1 operation(s) for [beta] mcp.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - '[beta] MCP'
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-beta-mcp-api-openapi.yml
+- aid: bookmyhost:bookmyhost-budget-management-api
+  name: Blazing Bullet Private Limited budget management API
+  description: >-
+    The budget management API from Blazing Bullet Private Limited — 6 operation(s) for budget management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - budget management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-budget-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-budget-spend-tracking-api
+  name: Blazing Bullet Private Limited Budget & Spend Tracking API
+  description: >-
+    The Budget & Spend Tracking API from Blazing Bullet Private Limited — 11 operation(s) for budget &
+    spend tracking.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Budget & Spend Tracking
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-budget-spend-tracking-api-openapi.yml
+- aid: bookmyhost:bookmyhost-cache-settings-api
+  name: Blazing Bullet Private Limited Cache Settings API
+  description: >-
+    The Cache Settings API from Blazing Bullet Private Limited — 2 operation(s) for cache settings.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Cache Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-cache-settings-api-openapi.yml
+- aid: bookmyhost:bookmyhost-caching-api
+  name: Blazing Bullet Private Limited Caching API
+  description: The caching API from Blazing Bullet Private Limited — 4 operation(s) for caching.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - caching
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-caching-api-openapi.yml
+- aid: bookmyhost:bookmyhost-chat-completions-api
+  name: Blazing Bullet Private Limited Chat/completions API
+  description: >-
+    The chat/completions API from Blazing Bullet Private Limited — 4 operation(s) for chat/completions.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - chat/completions
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-chat-completions-api-openapi.yml
+- aid: bookmyhost:bookmyhost-claude-code-marketplace-api
+  name: Blazing Bullet Private Limited Claude Code Marketplace API
+  description: >-
+    The Claude Code Marketplace API from Blazing Bullet Private Limited — 6 operation(s) for claude code
+    marketplace.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Claude Code Marketplace
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-claude-code-marketplace-api-openapi.yml
+- aid: bookmyhost:bookmyhost-cohere-pass-through-api
+  name: Blazing Bullet Private Limited Cohere Pass-through API
+  description: >-
+    The Cohere Pass-through API from Blazing Bullet Private Limited — 1 operation(s) for cohere pass-through.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Cohere Pass-through
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-cohere-pass-through-api-openapi.yml
+- aid: bookmyhost:bookmyhost-completions-api
+  name: Blazing Bullet Private Limited Completions API
+  description: >-
+    The completions API from Blazing Bullet Private Limited — 4 operation(s) for completions.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - completions
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-completions-api-openapi.yml
+- aid: bookmyhost:bookmyhost-compliance-api
+  name: Blazing Bullet Private Limited Compliance API
+  description: The compliance API from Blazing Bullet Private Limited — 2 operation(s) for compliance.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - compliance
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-compliance-api-openapi.yml
+- aid: bookmyhost:bookmyhost-config-api
+  name: Blazing Bullet Private Limited Config API
+  description: The Config API from Blazing Bullet Private Limited — 3 operation(s) for config.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Config
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-config-api-openapi.yml
+- aid: bookmyhost:bookmyhost-containers-api
+  name: Blazing Bullet Private Limited Containers API
+  description: The containers API from Blazing Bullet Private Limited — 10 operation(s) for containers.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - containers
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-containers-api-openapi.yml
+- aid: bookmyhost:bookmyhost-coordination-redis-settings-api
+  name: Blazing Bullet Private Limited Coordination Redis Settings API
+  description: >-
+    The Coordination Redis Settings API from Blazing Bullet Private Limited — 2 operation(s) for coordination
+    redis settings.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Coordination Redis Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-coordination-redis-settings-api-openapi.yml
+- aid: bookmyhost:bookmyhost-cost-tracking-api
+  name: Blazing Bullet Private Limited Cost Tracking API
+  description: >-
+    The Cost Tracking API from Blazing Bullet Private Limited — 3 operation(s) for cost tracking.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Cost Tracking
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-cost-tracking-api-openapi.yml
+- aid: bookmyhost:bookmyhost-credential-management-api
+  name: Blazing Bullet Private Limited credential management API
+  description: >-
+    The credential management API from Blazing Bullet Private Limited — 6 operation(s) for credential
+    management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - credential management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-credential-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-cursor-pass-through-api
+  name: Blazing Bullet Private Limited Cursor Pass-through API
+  description: >-
+    The Cursor Pass-through API from Blazing Bullet Private Limited — 1 operation(s) for cursor pass-through.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Cursor Pass-through
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-cursor-pass-through-api-openapi.yml
+- aid: bookmyhost:bookmyhost-customer-management-api
+  name: Blazing Bullet Private Limited Customer Management API
+  description: >-
+    The Customer Management API from Blazing Bullet Private Limited — 8 operation(s) for customer management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Customer Management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-customer-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-debug-api
+  name: Blazing Bullet Private Limited Debug API
+  description: The Debug API from Blazing Bullet Private Limited — 1 operation(s) for debug.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Debug
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-debug-api-openapi.yml
+- aid: bookmyhost:bookmyhost-email-management-api
+  name: Blazing Bullet Private Limited email management API
+  description: >-
+    The email management API from Blazing Bullet Private Limited — 2 operation(s) for email management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - email management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-email-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-embeddings-api
+  name: Blazing Bullet Private Limited Embeddings API
+  description: The embeddings API from Blazing Bullet Private Limited — 4 operation(s) for embeddings.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - embeddings
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-embeddings-api-openapi.yml
+- aid: bookmyhost:bookmyhost-evals-api
+  name: Blazing Bullet Private Limited Evals API
+  description: The evals API from Blazing Bullet Private Limited — 5 operation(s) for evals.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - evals
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-evals-api-openapi.yml
+- aid: bookmyhost:bookmyhost-experimental-api
+  name: Blazing Bullet Private Limited Experimental API
+  description: >-
+    The experimental API from Blazing Bullet Private Limited — 1 operation(s) for experimental.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - experimental
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-experimental-api-openapi.yml
+- aid: bookmyhost:bookmyhost-fallback-management-api
+  name: Blazing Bullet Private Limited Fallback Management API
+  description: >-
+    The Fallback Management API from Blazing Bullet Private Limited — 2 operation(s) for fallback management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Fallback Management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-fallback-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-files-api
+  name: Blazing Bullet Private Limited Files API
+  description: The files API from Blazing Bullet Private Limited — 9 operation(s) for files.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - files
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-files-api-openapi.yml
+- aid: bookmyhost:bookmyhost-fine-tuning-api
+  name: Blazing Bullet Private Limited Fine Tuning API
+  description: >-
+    The fine-tuning API from Blazing Bullet Private Limited — 6 operation(s) for fine-tuning.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - fine-tuning
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-fine-tuning-api-openapi.yml
+- aid: bookmyhost:bookmyhost-gemini-agents-api
+  name: Blazing Bullet Private Limited Gemini Agents API
+  description: >-
+    The gemini_agents API from Blazing Bullet Private Limited — 1 operation(s) for gemini_agents.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - gemini_agents
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-gemini-agents-api-openapi.yml
+- aid: bookmyhost:bookmyhost-google-ai-studio-pass-through-api
+  name: Blazing Bullet Private Limited Google AI Studio Pass-through API
+  description: >-
+    The Google AI Studio Pass-through API from Blazing Bullet Private Limited — 1 operation(s) for google
+    ai studio pass-through.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Google AI Studio Pass-through
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-google-ai-studio-pass-through-api-openapi.yml
+- aid: bookmyhost:bookmyhost-google-genai-endpoints-api
+  name: Blazing Bullet Private Limited google genai endpoints API
+  description: >-
+    The google genai endpoints API from Blazing Bullet Private Limited — 12 operation(s) for google genai
+    endpoints.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - google genai endpoints
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-google-genai-endpoints-api-openapi.yml
+- aid: bookmyhost:bookmyhost-guardrails-api
+  name: Blazing Bullet Private Limited Guardrails API
+  description: The guardrails API from Blazing Bullet Private Limited — 22 operation(s) for guardrails.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - guardrails
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-guardrails-api-openapi.yml
+- aid: bookmyhost:bookmyhost-health-api
+  name: Blazing Bullet Private Limited Health API
+  description: The health API from Blazing Bullet Private Limited — 16 operation(s) for health.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - health
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-health-api-openapi.yml
+- aid: bookmyhost:bookmyhost-images-api
+  name: Blazing Bullet Private Limited Images API
+  description: The images API from Blazing Bullet Private Limited — 6 operation(s) for images.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - images
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-images-api-openapi.yml
+- aid: bookmyhost:bookmyhost-interactions-api
+  name: Blazing Bullet Private Limited Interactions API
+  description: >-
+    The interactions API from Blazing Bullet Private Limited — 6 operation(s) for interactions.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - interactions
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-interactions-api-openapi.yml
+- aid: bookmyhost:bookmyhost-internal-user-management-api
+  name: Blazing Bullet Private Limited Internal User management API
+  description: >-
+    The Internal User management API from Blazing Bullet Private Limited — 10 operation(s) for internal
+    user management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Internal User management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-internal-user-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-jwt-mappings-api
+  name: Blazing Bullet Private Limited JWT Mappings API
+  description: >-
+    The jwt_mappings API from Blazing Bullet Private Limited — 5 operation(s) for jwt_mappings.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - jwt_mappings
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-jwt-mappings-api-openapi.yml
+- aid: bookmyhost:bookmyhost-key-management-api
+  name: Blazing Bullet Private Limited key management API
+  description: >-
+    The key management API from Blazing Bullet Private Limited — 15 operation(s) for key management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - key management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-key-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-langfuse-passthrough-api
+  name: Blazing Bullet Private Limited Langfuse Passthrough API
+  description: >-
+    The langfuse_passthrough API from Blazing Bullet Private Limited — 1 operation(s) for langfuse_passthrough.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - langfuse_passthrough
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-langfuse-passthrough-api-openapi.yml
+- aid: bookmyhost:bookmyhost-litellm-api-api
+  name: Blazing Bullet Private Limited LiteLLM API
+  description: >-
+    The LiteLLM API API from Blazing Bullet Private Limited — 1 operation(s) for litellm api.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - LiteLLM API
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-litellm-api-api-openapi.yml
+- aid: bookmyhost:bookmyhost-litellm-api
+  name: Blazing Bullet Private Limited Litellm API
+  description: The Litellm API from Blazing Bullet Private Limited — 1 operation(s) for litellm.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Litellm
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-litellm-api-openapi.yml
+- aid: bookmyhost:bookmyhost-llm-utils-api
+  name: Blazing Bullet Private Limited llm utils API
+  description: The llm utils API from Blazing Bullet Private Limited — 3 operation(s) for llm utils.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - llm utils
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-llm-utils-api-openapi.yml
+- aid: bookmyhost:bookmyhost-logging-callbacks-api
+  name: Blazing Bullet Private Limited Logging Callbacks API
+  description: >-
+    The Logging Callbacks API from Blazing Bullet Private Limited — 2 operation(s) for logging callbacks.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Logging Callbacks
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-logging-callbacks-api-openapi.yml
+- aid: bookmyhost:bookmyhost-mcp-api
+  name: Blazing Bullet Private Limited MCP API
+  description: The Mcp API from Blazing Bullet Private Limited — 17 operation(s) for mcp.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Mcp
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-mcp-api-openapi.yml
+- aid: bookmyhost:bookmyhost-mcp-rest-api
+  name: Blazing Bullet Private Limited MCP Rest API
+  description: The mcp_rest API from Blazing Bullet Private Limited — 4 operation(s) for mcp_rest.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - mcp_rest
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-mcp-rest-api-openapi.yml
+- aid: bookmyhost:bookmyhost-memory-management-api
+  name: Blazing Bullet Private Limited memory management API
+  description: >-
+    The memory management API from Blazing Bullet Private Limited — 2 operation(s) for memory management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - memory management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-memory-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-milvus-pass-through-api
+  name: Blazing Bullet Private Limited Milvus Pass-through API
+  description: >-
+    The Milvus Pass-through API from Blazing Bullet Private Limited — 1 operation(s) for milvus pass-through.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Milvus Pass-through
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-milvus-pass-through-api-openapi.yml
+- aid: bookmyhost:bookmyhost-mistral-pass-through-api
+  name: Blazing Bullet Private Limited Mistral Pass-through API
+  description: >-
+    The Mistral Pass-through API from Blazing Bullet Private Limited — 1 operation(s) for mistral pass-through.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Mistral Pass-through
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-mistral-pass-through-api-openapi.yml
+- aid: bookmyhost:bookmyhost-model-management-api
+  name: Blazing Bullet Private Limited model management API
+  description: >-
+    The model management API from Blazing Bullet Private Limited — 24 operation(s) for model management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - model management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-model-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-moderations-api
+  name: Blazing Bullet Private Limited Moderations API
+  description: >-
+    The moderations API from Blazing Bullet Private Limited — 2 operation(s) for moderations.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - moderations
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-moderations-api-openapi.yml
+- aid: bookmyhost:bookmyhost-ocr-api
+  name: Blazing Bullet Private Limited Ocr API
+  description: The ocr API from Blazing Bullet Private Limited — 2 operation(s) for ocr.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - ocr
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-ocr-api-openapi.yml
+- aid: bookmyhost:bookmyhost-openai-pass-through-api
+  name: Blazing Bullet Private Limited OpenAI Pass-through API
+  description: >-
+    The OpenAI Pass-through API from Blazing Bullet Private Limited — 2 operation(s) for openai pass-through.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - OpenAI Pass-through
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-openai-pass-through-api-openapi.yml
+- aid: bookmyhost:bookmyhost-organization-management-api
+  name: Blazing Bullet Private Limited organization management API
+  description: >-
+    The organization management API from Blazing Bullet Private Limited — 9 operation(s) for organization
+    management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - organization management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-organization-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-plugins-api
+  name: Blazing Bullet Private Limited Plugins API
+  description: The plugins API from Blazing Bullet Private Limited — 2 operation(s) for plugins.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - plugins
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-plugins-api-openapi.yml
+- aid: bookmyhost:bookmyhost-policies-api
+  name: Blazing Bullet Private Limited Policies API
+  description: The policies API from Blazing Bullet Private Limited — 10 operation(s) for policies.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - policies
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-policies-api-openapi.yml
+- aid: bookmyhost:bookmyhost-policy-engine-api
+  name: Blazing Bullet Private Limited Policy Engine API
+  description: >-
+    The policy_engine API from Blazing Bullet Private Limited — 14 operation(s) for policy_engine.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - policy_engine
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-policy-engine-api-openapi.yml
+- aid: bookmyhost:bookmyhost-project-management-api
+  name: Blazing Bullet Private Limited project management API
+  description: >-
+    The project management API from Blazing Bullet Private Limited — 5 operation(s) for project management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - project management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-project-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-prompts-api
+  name: Blazing Bullet Private Limited Prompts API
+  description: The prompts API from Blazing Bullet Private Limited — 7 operation(s) for prompts.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - prompts
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-prompts-api-openapi.yml
+- aid: bookmyhost:bookmyhost-provider-api
+  name: Blazing Bullet Private Limited Provider API
+  description: The Provider API from Blazing Bullet Private Limited — 1 operation(s) for provider.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Provider
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-provider-api-openapi.yml
+- aid: bookmyhost:bookmyhost-providers-api
+  name: Blazing Bullet Private Limited Providers API
+  description: The providers API from Blazing Bullet Private Limited — 2 operation(s) for providers.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - providers
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-providers-api-openapi.yml
+- aid: bookmyhost:bookmyhost-public-api
+  name: Blazing Bullet Private Limited Public API
+  description: The public API from Blazing Bullet Private Limited — 11 operation(s) for public.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - public
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-public-api-openapi.yml
+- aid: bookmyhost:bookmyhost-rag-api
+  name: Blazing Bullet Private Limited Rag API
+  description: The rag API from Blazing Bullet Private Limited — 4 operation(s) for rag.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - rag
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-rag-api-openapi.yml
+- aid: bookmyhost:bookmyhost-realtime-api
+  name: Blazing Bullet Private Limited Realtime API
+  description: The realtime API from Blazing Bullet Private Limited — 6 operation(s) for realtime.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - realtime
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-realtime-api-openapi.yml
+- aid: bookmyhost:bookmyhost-rerank-api
+  name: Blazing Bullet Private Limited Rerank API
+  description: The rerank API from Blazing Bullet Private Limited — 3 operation(s) for rerank.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - rerank
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-rerank-api-openapi.yml
+- aid: bookmyhost:bookmyhost-responses-api
+  name: Blazing Bullet Private Limited Responses API
+  description: The responses API from Blazing Bullet Private Limited — 16 operation(s) for responses.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - responses
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-responses-api-openapi.yml
+- aid: bookmyhost:bookmyhost-robots-txt-api
+  name: Blazing Bullet Private Limited Robots.txt API
+  description: The Robots.txt API from Blazing Bullet Private Limited — 1 operation(s) for robots.txt.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Robots.txt
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-robots-txt-api-openapi.yml
+- aid: bookmyhost:bookmyhost-router-settings-api
+  name: Blazing Bullet Private Limited Router Settings API
+  description: >-
+    The Router Settings API from Blazing Bullet Private Limited — 2 operation(s) for router settings.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Router Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-router-settings-api-openapi.yml
+- aid: bookmyhost:bookmyhost-routes-api
+  name: Blazing Bullet Private Limited Routes API
+  description: The Routes API from Blazing Bullet Private Limited — 1 operation(s) for routes.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Routes
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-routes-api-openapi.yml
+- aid: bookmyhost:bookmyhost-rust-control-plane-api
+  name: Blazing Bullet Private Limited rust control plane API
+  description: >-
+    The rust control plane API from Blazing Bullet Private Limited — 1 operation(s) for rust control plane.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - rust control plane
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-rust-control-plane-api-openapi.yml
+- aid: bookmyhost:bookmyhost-scim-api
+  name: Blazing Bullet Private Limited SCIM API
+  description: The scim API from Blazing Bullet Private Limited — 10 operation(s) for scim.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - scim
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-scim-api-openapi.yml
+- aid: bookmyhost:bookmyhost-search-api
+  name: Blazing Bullet Private Limited Search API
+  description: The search API from Blazing Bullet Private Limited — 6 operation(s) for search.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - search
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-search-api-openapi.yml
+- aid: bookmyhost:bookmyhost-search-tools-api
+  name: Blazing Bullet Private Limited Search Tools API
+  description: >-
+    The search_tools API from Blazing Bullet Private Limited — 5 operation(s) for search_tools.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - search_tools
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-search-tools-api-openapi.yml
+- aid: bookmyhost:bookmyhost-settings-api
+  name: Blazing Bullet Private Limited Settings API
+  description: The Settings API from Blazing Bullet Private Limited — 2 operation(s) for settings.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-settings-api-openapi.yml
+- aid: bookmyhost:bookmyhost-sso-settings-api
+  name: Blazing Bullet Private Limited SSO Settings API
+  description: >-
+    The SSO Settings API from Blazing Bullet Private Limited — 6 operation(s) for sso settings.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - SSO Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-sso-settings-api-openapi.yml
+- aid: bookmyhost:bookmyhost-tag-management-api
+  name: Blazing Bullet Private Limited tag management API
+  description: >-
+    The tag management API from Blazing Bullet Private Limited — 12 operation(s) for tag management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - tag management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-tag-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-team-api
+  name: Blazing Bullet Private Limited Team API
+  description: The Team API from Blazing Bullet Private Limited — 1 operation(s) for team.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Team
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-team-api-openapi.yml
+- aid: bookmyhost:bookmyhost-team-management-api
+  name: Blazing Bullet Private Limited team management API
+  description: >-
+    The team management API from Blazing Bullet Private Limited — 22 operation(s) for team management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - team management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-team-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-tools-api
+  name: Blazing Bullet Private Limited Tools API
+  description: The tools API from Blazing Bullet Private Limited — 7 operation(s) for tools.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - tools
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-tools-api-openapi.yml
+- aid: bookmyhost:bookmyhost-toolset-api
+  name: Blazing Bullet Private Limited Toolset API
+  description: The Toolset API from Blazing Bullet Private Limited — 1 operation(s) for toolset.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Toolset
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-toolset-api-openapi.yml
+- aid: bookmyhost:bookmyhost-ui-settings-api
+  name: Blazing Bullet Private Limited UI Settings API
+  description: >-
+    The UI Settings API from Blazing Bullet Private Limited — 2 operation(s) for ui settings.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - UI Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-ui-settings-api-openapi.yml
+- aid: bookmyhost:bookmyhost-ui-theme-settings-api
+  name: Blazing Bullet Private Limited UI Theme Settings API
+  description: >-
+    The UI Theme Settings API from Blazing Bullet Private Limited — 3 operation(s) for ui theme settings.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - UI Theme Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-ui-theme-settings-api-openapi.yml
+- aid: bookmyhost:bookmyhost-usage-ai-api
+  name: Blazing Bullet Private Limited Usage AI API
+  description: The usage_ai API from Blazing Bullet Private Limited — 1 operation(s) for usage_ai.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - usage_ai
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-usage-ai-api-openapi.yml
+- aid: bookmyhost:bookmyhost-user-agent-analytics-api
+  name: Blazing Bullet Private Limited user agent analytics API
+  description: >-
+    The user agent analytics API from Blazing Bullet Private Limited — 6 operation(s) for user agent analytics.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - user agent analytics
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-user-agent-analytics-api-openapi.yml
+- aid: bookmyhost:bookmyhost-vector-store-management-api
+  name: Blazing Bullet Private Limited Vector Store Management API
+  description: >-
+    The vector_store_management API from Blazing Bullet Private Limited — 6 operation(s) for vector_store_management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - vector_store_management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-vector-store-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-vector-stores-api
+  name: Blazing Bullet Private Limited Vector Stores API
+  description: >-
+    The vector_stores API from Blazing Bullet Private Limited — 13 operation(s) for vector_stores.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - vector_stores
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-vector-stores-api-openapi.yml
+- aid: bookmyhost:bookmyhost-vertex-ai-pass-through-api
+  name: Blazing Bullet Private Limited Vertex AI Pass-through API
+  description: >-
+    The Vertex AI Pass-through API from Blazing Bullet Private Limited — 2 operation(s) for vertex ai
+    pass-through.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Vertex AI Pass-through
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-vertex-ai-pass-through-api-openapi.yml
+- aid: bookmyhost:bookmyhost-videos-api
+  name: Blazing Bullet Private Limited Videos API
+  description: The videos API from Blazing Bullet Private Limited — 16 operation(s) for videos.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - videos
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-videos-api-openapi.yml
+- aid: bookmyhost:bookmyhost-vllm-pass-through-api
+  name: Blazing Bullet Private Limited VLLM Pass-through API
+  description: >-
+    The VLLM Pass-through API from Blazing Bullet Private Limited — 1 operation(s) for vllm pass-through.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - VLLM Pass-through
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-vllm-pass-through-api-openapi.yml
+- aid: bookmyhost:bookmyhost-watsonx-pass-through-api
+  name: Blazing Bullet Private Limited Watsonx Pass-through API
+  description: >-
+    The Watsonx Pass-through API from Blazing Bullet Private Limited — 1 operation(s) for watsonx pass-through.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Watsonx Pass-through
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-watsonx-pass-through-api-openapi.yml
+- aid: bookmyhost:bookmyhost-websocket-api
+  name: Blazing Bullet Private Limited WebSocket API
+  description: The WebSocket API from Blazing Bullet Private Limited — 6 operation(s) for websocket.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - WebSocket
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-websocket-api-openapi.yml
+- aid: bookmyhost:bookmyhost-well-known-api
+  name: Blazing Bullet Private Limited .well Known API
+  description: >-
+    The .well Known API from Blazing Bullet Private Limited — 1 operation(s) for .well known.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - .well Known
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-well-known-api-openapi.yml
+- aid: bookmyhost:bookmyhost-workflow-management-api
+  name: Blazing Bullet Private Limited workflow management API
+  description: >-
+    The workflow management API from Blazing Bullet Private Limited — 4 operation(s) for workflow management.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - workflow management
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-workflow-management-api-openapi.yml
+- aid: bookmyhost:bookmyhost-passthrough-api
+  name: Blazing Bullet Private Limited Passthrough API
+  description: >-
+    The Passthrough API from Blazing Bullet Private Limited — 17 operation(s) for passthrough.
+  humanURL: https://my.bookmyhost.com/developer
+  tags:
+  - Passthrough
+  properties:
+  - type: OpenAPI
+    url: openapi/bookmyhost-passthrough-api-openapi.yml
 x-coverage:
   state: unreadable
   reason: no-machine-readable-spec
